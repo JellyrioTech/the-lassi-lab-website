@@ -19,6 +19,8 @@
         var(--color-brand-primary-light) 0%,
         var(--color-brand-primary-dark) 100%
     );
+
+    --drop-shadow-img: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 :root {
@@ -31,11 +33,8 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(font-display);
+h1 {
+    font-family: var(--font-display);
 }
 
 body {
@@ -43,4 +42,20 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
+}
+
+.scrollbar-always {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+.scrollbar-always::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+}
+.scrollbar-always::-webkit-scrollbar-thumb {
+    background-color: var(--color-brand-grey);
+    border-radius: 10px;
+}
+.scrollbar-always::-webkit-scrollbar-track {
+    margin-top: 15px;
 }
