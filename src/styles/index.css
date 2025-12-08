@@ -4,6 +4,7 @@
 @theme {
     --color-brand-white: #fff7f5;
     --color-brand-black: #222020;
+    --color-brand-black-rgb: 34, 32, 32;
     --color-brand-primary-light: #d8745f;
     --color-brand-primary: #d8745f;
     --color-brand-primary-dark: #9a3723;
@@ -20,7 +21,9 @@
         var(--color-brand-primary-dark) 100%
     );
 
-    --drop-shadow-img: 0 4px 4px rgba(0, 0, 0, 0.25);
+    --drop-shadow-img: 0 4px 4px rgba(var(--color-brand-black-rgb), 0.25);
+    --drop-shadow-b: 0 4px 0px rgba(var(--color-brand-black-rgb), 100);
+    --drop-shadow-r: 4px 4px 0px rgba(var(--color-brand-black-rgb), 100);
 }
 
 :root {
@@ -31,6 +34,11 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+span {
+    color: var(--color-brand-black);
 }
 
 h1 {

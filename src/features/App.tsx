@@ -4,22 +4,19 @@ import EventsList from "./EventsList";
 
 function App() {
     return (
-        <div
-            id="content"
-            className="flex flex-col justify-center w-lvw h-lvh bg-brand-primary"
-        >
+        <div id="content" className=" bg-brand-primary">
             <section
                 id="container"
-                className="w-full max-w-[600px] py-4 m-auto gap-[35px] md:gap-[50px]"
+                className="w-full max-w-[660px] py-4 pt-14 mx-auto"
             >
                 <div className="flex flex-col items-center md:h-[280px] md:justify-evenly md:flex-row md:mt-[70px]">
-                    <div className="w-full px-6 flex justify-center mb-9 md:mb-0 md:w-1/2 ">
+                    <div className="flex justify-center mb-9 md:mb-0 md:px-4 md:w-2/5">
                         <img
                             src={logo}
-                            className="w-[200px] h-[200px] md:w[280px] md:h[280px] drop-shadow-img"
+                            className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] drop-shadow-img"
                         />
                     </div>
-                    <div className="w-full px-6 md:h-full md:w-1/2 md:flex md:items-start md:pt-6 md:gap-5">
+                    <div className="w-full px-6 md:h-full md:flex md:items-start md:pt-6 md:gap-5 md:w-3/5">
                         <div className="hidden md:block w-px h-full md:border-l md:border-brand-white"></div>
                         <div className="mt-5 w-full">
                             <EventsList />

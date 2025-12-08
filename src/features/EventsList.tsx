@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as eventService from "../services/events.services";
 import type { CalendarEvent } from "../types/Event.type";
+import Card from "../components/card";
 
 function EventsList() {
     const [events, setEvents] = useState<CalendarEvent[]>([]);
@@ -42,9 +43,9 @@ function EventsList() {
                         <p className="text-brand-primary-dark mt-3">{error}</p>
                     )}
                     {!error && (
-                        <div className="h-40 overflow-y-scroll mt-3 flex gap-10 flex-col scrollbar-always">
+                        <div className="h-[220px] pb-2 pr-3 overflow-y-scroll mt-3 flex gap-4 flex-col scrollbar-always md:h-[180px]">
                             {events.map((event) => (
-                                <p>{event.name}</p>
+                                <Card details={event} />
                             ))}
                         </div>
                     )}
