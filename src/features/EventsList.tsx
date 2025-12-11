@@ -12,7 +12,12 @@ function EventsList() {
         const fetchEvents = async () => {
             setIsLoading(true);
             try {
-                setEvents(await eventService.getAllEvents());
+                const today = new Date();
+                const fetched = await eventService.getAllEvents();
+                const filtered = fetched.filter(
+                    (events) => events.date >= today
+                );
+                setEvents(filtered);
             } catch (error) {
                 setError("Server Error occurred fetching events");
             } finally {
@@ -44,9 +49,15 @@ function EventsList() {
                     )}
                     {!error && (
                         <div className="h-[220px] pb-2 pr-3 overflow-y-scroll mt-3 flex gap-4 flex-col scrollbar-always md:h-[180px]">
-                            {events.map((event) => (
-                                <Card details={event} />
-                            ))}
+                            {events.length === 0 && (
+                                <Card
+                                    details={
+                                        "No events scheduled yet. Check back later"
+                                    }
+                                />
+                            )}
+                            {events.length > 0 &&
+                                events.map((event) => <Card details={event} />)}
                         </div>
                     )}
                 </div>

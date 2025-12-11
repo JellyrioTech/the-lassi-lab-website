@@ -17,6 +17,14 @@ const isCalendarEvent = (obj: unknown): obj is CalendarEvent => {
 };
 
 function Card<T>({ details }: CardProps<T>) {
+    if (typeof details === "string") {
+        return (
+            <div className="flex flex-col px-4 py-2 gap-1 bg-brand-tertiary rounded-xl border border-brand-white drop-shadow-b">
+                <p className="font-bold text-[15px]">{details as string}</p>
+            </div>
+        );
+    }
+
     if (isCalendarEvent(details)) {
         const event = details as CalendarEvent;
         const eventDate = event.date.toLocaleDateString("en-us", {
@@ -54,8 +62,6 @@ function Card<T>({ details }: CardProps<T>) {
             </div>
         );
     }
-
-    return <div>none</div>;
 }
 
 export default Card;

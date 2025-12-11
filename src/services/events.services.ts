@@ -37,6 +37,34 @@ export const getAllEvents = async (): Promise<CalendarEvent[]> => {
             startTime: "11AM",
             endTime: "4PM",
         },
+        {
+            name: "Hingham Winter Farmers Market",
+            address: "204 Union Street, Hingham MA",
+            date: new Date("01/10/2026"),
+            startTime: "10AM",
+            endTime: "1PM",
+        },
+        {
+            name: "Farmers Market",
+            address: "First Street Market, Cambridge, MA",
+            date: new Date("01/17/2026"),
+            startTime: "11AM",
+            endTime: "4PM",
+        },
+        {
+            name: "Farmers Market",
+            address: "First Street Market, Cambridge, MA",
+            date: new Date("01/24/2026"),
+            startTime: "11AM",
+            endTime: "4PM",
+        },
+        {
+            name: "Farmers Market",
+            address: "First Street Market, Cambridge, MA",
+            date: new Date("01/31/2026"),
+            startTime: "11AM",
+            endTime: "4PM",
+        },
     ];
 
     return events;
