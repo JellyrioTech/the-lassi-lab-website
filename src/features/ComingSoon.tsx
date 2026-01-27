@@ -14,22 +14,6 @@ function ComingSoon() {
                     Email to info@nesterin.com for any questions.
                 </p>
             </div>
-            <div className="flex flex-col md:flex-row justify-center gap-4 pt-7">
-                <Button
-                    icon={"instagram"}
-                    text={"Follow Us On Instagram"}
-                    url={"https://www.instagram.com/thelassilab/"}
-                    className={"w-[230px]"}
-                />
-                <Button
-                    icon={"facebook"}
-                    text={"Like Us On Facebook"}
-                    url={
-                        "https://www.facebook.com/profile.php?id=61581302631940"
-                    }
-                    className={"w-[210px]"}
-                />
-            </div>
         </div>
     );
 }

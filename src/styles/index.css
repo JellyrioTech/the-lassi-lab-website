@@ -36,11 +36,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-p,
-span {
-    color: var(--color-brand-black);
-}
-
 h1 {
     font-family: var(--font-display);
 }
