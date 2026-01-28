@@ -1,39 +1,228 @@
 import Button from "../../components/button";
 import HeaderHeroImage from "../../assets/Header_Hero_Image.png";
+import { easeInOut, motion } from "motion/react";
+import SectionContainer from "../../components/section-container";
+import MapleLassi from "../../assets/Maple Lassi.png";
+import MangoLassi from "../../assets/MangoLassi.png";
 
 const HomePage = () => {
     return (
-        <div className="bg-brand-white">
-            <section className="w-full bg-brand-secondary py-[60px]">
-                <div className="container mx-auto">
-                    <div className="flex flex-col mx-3 sm:mx-0">
-                        {/* Header Menu */}
-                        <div className="flex flex-col justify-between items-center md:flex-row">
-                            <div className="flex flex-col">
-                                <h1 className="font-display text-brand-black text-2xl lg:text-4xl">
-                                    Creamy Lassi & Sizzling Eats
-                                </h1>
-                                <p className="font-text text-brand-black text-[16px] mt-[10px]">
-                                    From Mango fusion to spicy hot bites, we
-                                    bring the best of global street food
-                                    straight to your neighborhood.
-                                </p>
-                                <Button
-                                    className="w-fit mt-[25px]"
-                                    icon={"instagram"}
-                                    text={"See Upcoming Events"}
-                                    type={"primary"}
-                                    onTap={() => {}}
-                                />
-                            </div>
-                            <img
-                                src={HeaderHeroImage}
-                                className="w-[80%] mt-[30px] sm:w-[400px] md:w-[250px] lg:w-[400px]"
+        <div className="bg-brand-white min-h-dvh overflow-x-hidden">
+            <SectionContainer bg={"bg-brand-secondary"}>
+                <div className="flex flex-col justify-between items-center md:flex-row">
+                    <div className="flex flex-col">
+                        <motion.h1
+                            className="font-display font-bold text-brand-black text-2xl lg:text-4xl"
+                            initial={{ opacity: 0, y: -100 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            Creamy Lassi & Sizzling Eats
+                        </motion.h1>
+                        <motion.p
+                            className="font-text text-brand-black text-[16px] mt-[15px]"
+                            initial={{ opacity: 0, x: -100 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            From Mango fusion to spicy hot bites, we bring the
+                            best of global street food straight to your
+                            neighborhood.
+                        </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 100 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            <Button
+                                className="w-fit mt-[25px]"
+                                icon={"instagram"}
+                                text={"See Upcoming Events"}
+                                type={"primary"}
+                                onTap={() => {}}
                             />
-                        </div>
+                        </motion.div>
                     </div>
+                    <motion.img
+                        src={HeaderHeroImage}
+                        className="w-[80%] mt-[30px] sm:w-[400px] md:w-[250px] lg:w-[400px]"
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ y: [0, -20, 0], x: 0, opacity: 1 }}
+                        transition={{
+                            opacity: { duration: 0.5, ease: "easeOut" },
+                            x: { duration: 0.5, ease: "easeOut" },
+                            y: {
+                                delay: 0.5,
+                                duration: 1.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            },
+                        }}
+                    />
                 </div>
-            </section>
+            </SectionContainer>
+            <div className="w-[200%] overflow-hidden">
+                <motion.div
+                    className="w-full flex"
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{
+                        repeat: Infinity,
+                        ease: "linear",
+                        duration: 5,
+                    }}
+                >
+                    <svg
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1200 120"
+                        preserveAspectRatio="none"
+                        // h-[50px] controls the height of the wave
+                        className="relative block w-[calc(100%+1.3px)] h-[60px] "
+                    >
+                        {/* This path draws the wave. fill-white matches the section BELOW */}
+                        <path
+                            d="M0,0 L1200,0 L1200,50 Q1050,100 900,50 T600,50 T300,50 T0,50 Z"
+                            className="fill-brand-secondary"
+                        />
+                    </svg>
+                    <svg
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1200 120"
+                        preserveAspectRatio="none"
+                        // h-[50px] controls the height of the wave
+                        className="relative block w-[calc(100%+1.3px)] h-[60px] "
+                    >
+                        {/* This path draws the wave. fill-white matches the section BELOW */}
+                        <path
+                            d="M0,0 L1200,0 L1200,50 Q1050,100 900,50 T600,50 T300,50 T0,50 Z"
+                            className="fill-brand-secondary"
+                        />
+                    </svg>
+                </motion.div>
+            </div>
+            <SectionContainer>
+                <motion.h2
+                    className="text-4xl font-display font-bold text-brand-black md:text-5xl"
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.5,
+                    }}
+                >
+                    Meet our Top Sellers
+                </motion.h2>
+                <div className="flex flex-col mt-15 gap-[45px] md:gap-[15px]">
+                    <TopSellersCard
+                        title="Mango Cloud Lassi"
+                        body="Double Mango Lassi Made with a secret blend of two mango
+                    varieties, fresh milk, and rich yogurt. It’s thick, creamy,
+                    and sold out at almost every pop-up. Taste the hype."
+                        image={MangoLassi}
+                        availableIn={["vegan", "dairy"]}
+                    />
+                    <TopSellersCard
+                        direction="right"
+                        title="Maple Wonderland Lassi"
+                        body="Double Mango Lassi Made with a secret blend of two mango
+                    varieties, fresh milk, and rich yogurt. It’s thick, creamy,
+                    and sold out at almost every pop-up. Taste the hype."
+                        image={MapleLassi}
+                        availableIn={["vegan", "dairy"]}
+                    />
+                </div>
+                <div className="flex justify-center">
+                    <Button
+                        type="primary"
+                        text="Checkout out all our other drinks"
+                        onTap={() => {}}
+                        className="mt-[50px]"
+                    />
+                </div>
+            </SectionContainer>
+        </div>
+    );
+};
+
+const TopSellersCard = ({
+    title,
+    body,
+    availableIn,
+    image,
+    direction = "left",
+}: {
+    title: string;
+    body: string;
+    availableIn: ("vegan" | "dairy")[];
+    image: string;
+    direction?: "left" | "right";
+}) => {
+    const isRight = direction === "right";
+    return (
+        <div className="flex flex-col justify-between items-center md:flex-row lg:mx-20">
+            <motion.img
+                src={image}
+                className={`w-[70%] mb-5 ${isRight ? "md:order-last" : ""} sm:w-[300px] sm:h-[300px] md:w-[356px] md:h-[356px] md:mb-0`}
+                initial={{ x: isRight ? 100 : -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, scale: [0.95, 1] }}
+                transition={{
+                    duration: 0.5,
+                    scale: {
+                        repeat: Infinity,
+                        duration: 0.8,
+                        repeatType: "reverse",
+                        ease: "easeInOut",
+                    },
+                }}
+            />
+            <div className="flex flex-col md:w-[450px]">
+                <motion.h3
+                    className={`font-display text-[24px] text-brand-black ${isRight ? "md:text-left" : "md:text-right"}`}
+                    initial={{ x: isRight ? -100 : 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    {title}
+                </motion.h3>
+                <motion.p
+                    className={`font-text text-[16px] text-brand-black ${isRight ? "md:text-left" : "md:text-right"} pt-[5px]`}
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: easeInOut }}
+                >
+                    {body}
+                </motion.p>
+                <motion.p
+                    className={`font-text text-brand-primary font-bold text-[20px] ${isRight ? "md:text-left" : "md:text-right"} mt-5`}
+                >
+                    Available In
+                </motion.p>
+                <div
+                    className={`flex gap-1 mt-[5px] ${isRight ? "" : "md:justify-end"}`}
+                >
+                    {availableIn.map((val) => (
+                        <motion.span
+                            className={`${val === "vegan" ? "bg-[#25A071]" : "bg-[#FFBC5C]"} rounded-[10px]`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <p className="font-bold font-text text-[14px] mx-[5px] text-brand-white">
+                                {val.toUpperCase()}
+                            </p>
+                        </motion.span>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,8 @@
+import { easeInOut, motion } from "motion/react";
+import { useState } from "react";
+
 interface ButtonProps {
-    icon: "instagram" | "facebook";
+    icon?: "instagram" | "facebook";
     text: string;
     onTap: () => void;
     type?: "primary" | "secondary";
@@ -13,9 +16,12 @@ function Button({
     type = "primary",
     className = "",
 }: ButtonProps) {
+    const [isPressed, setIsPressed] = useState(false);
+
     let buttonColor: string = "";
     let iconColor: string = "";
     let textColor: string = "";
+    const shadowClass = isPressed ? "" : "drop-shadow-r";
     switch (type) {
         case "secondary":
             buttonColor = "bg-brand-tertiary";
@@ -29,10 +35,22 @@ function Button({
             break;
     }
     return (
-        <button
-            className={`${className} ${buttonColor} rounded p-2 font-bold border border-brand-black drop-shadow-r`}
+        <motion.button
+            className={`${className} ${buttonColor} rounded p-2 font-bold border border-brand-black ${shadowClass}`}
             type="button"
-            onClick={onTap}
+            onTapStart={() => setIsPressed(true)}
+            onTap={() => {
+                setIsPressed(false);
+                onTap();
+            }}
+            onTapCancel={() => setIsPressed(false)}
+            whileTap={{
+                scale: 0.95,
+            }}
+            transition={{
+                duration: 0.1,
+                ease: "linear",
+            }}
         >
             <p className="inline-flex align-bottom items-center gap-2">
                 <span>
@@ -71,7 +89,7 @@ function Button({
                     {text}
                 </p>
             </p>
-        </button>
+        </motion.button>
     );
 }
 
