@@ -4,15 +4,17 @@ import { easeInOut, motion } from "motion/react";
 import SectionContainer from "../../components/section-container";
 import MapleLassi from "../../assets/Maple Lassi.png";
 import MangoLassi from "../../assets/MangoLassi.png";
+import { NavBar } from "./NavBar";
 
 const HomePage = () => {
     return (
         <div className="bg-brand-white min-h-dvh overflow-x-hidden">
             <SectionContainer bg={"bg-brand-secondary"}>
+                <NavBar />
                 <div className="flex flex-col justify-between items-center md:flex-row">
                     <div className="flex flex-col">
                         <motion.h1
-                            className="font-display font-bold text-brand-black text-2xl lg:text-4xl"
+                            className="font-display font-bold text-brand-black text-3xl lg:text-4xl"
                             initial={{ opacity: 0, y: -100 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{
@@ -171,7 +173,9 @@ const TopSellersCard = ({
         <div className="flex flex-col justify-between items-center md:flex-row lg:mx-20">
             <motion.img
                 src={image}
-                className={`w-[70%] mb-5 ${isRight ? "md:order-last" : ""} sm:w-[300px] sm:h-[300px] md:w-[356px] md:h-[356px] md:mb-0`}
+                className={`w-[70%] mb-5 ${
+                    isRight ? "md:order-last" : ""
+                } sm:w-[300px] sm:h-[300px] md:w-[356px] md:h-[356px] md:mb-0`}
                 initial={{ x: isRight ? 100 : -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1, scale: [0.95, 1] }}
                 transition={{
@@ -186,7 +190,9 @@ const TopSellersCard = ({
             />
             <div className="flex flex-col md:w-[450px]">
                 <motion.h3
-                    className={`font-display text-[24px] text-brand-black ${isRight ? "md:text-left" : "md:text-right"}`}
+                    className={`font-display text-[24px] text-brand-black ${
+                        isRight ? "md:text-left" : "md:text-right"
+                    }`}
                     initial={{ x: isRight ? -100 : 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
@@ -194,7 +200,9 @@ const TopSellersCard = ({
                     {title}
                 </motion.h3>
                 <motion.p
-                    className={`font-text text-[16px] text-brand-black ${isRight ? "md:text-left" : "md:text-right"} pt-[5px]`}
+                    className={`font-text text-[16px] text-brand-black ${
+                        isRight ? "md:text-left" : "md:text-right"
+                    } pt-[5px]`}
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, ease: easeInOut }}
@@ -202,16 +210,24 @@ const TopSellersCard = ({
                     {body}
                 </motion.p>
                 <motion.p
-                    className={`font-text text-brand-primary font-bold text-[20px] ${isRight ? "md:text-left" : "md:text-right"} mt-5`}
+                    className={`font-text text-brand-primary font-bold text-[20px] ${
+                        isRight ? "md:text-left" : "md:text-right"
+                    } mt-5`}
                 >
                     Available In
                 </motion.p>
                 <div
-                    className={`flex gap-1 mt-[5px] ${isRight ? "" : "md:justify-end"}`}
+                    className={`flex gap-1 mt-[5px] ${
+                        isRight ? "" : "md:justify-end"
+                    }`}
                 >
                     {availableIn.map((val) => (
                         <motion.span
-                            className={`${val === "vegan" ? "bg-[#25A071]" : "bg-[#FFBC5C]"} rounded-[10px]`}
+                            className={`${
+                                val === "vegan"
+                                    ? "bg-[#25A071]"
+                                    : "bg-[#FFBC5C]"
+                            } rounded-[10px]`}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5 }}
