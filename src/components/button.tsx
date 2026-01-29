@@ -83,11 +83,7 @@ function Button({
                         </svg>
                     )}
                 </span>
-                <p
-                    className={`font-bold text-[15px] text-brand-white ${textColor}`}
-                >
-                    {text}
-                </p>
+                <p className={`font-bold text-[15px] ${textColor}`}>{text}</p>
             </p>
         </motion.button>
     );

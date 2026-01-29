@@ -4,13 +4,18 @@ import { easeInOut, motion } from "motion/react";
 import SectionContainer from "../../components/section-container";
 import MapleLassi from "../../assets/Maple Lassi.png";
 import MangoLassi from "../../assets/MangoLassi.png";
+import FreshLassiBG from "../../assets/FreshLasiImage.png";
 import { NavBar } from "./NavBar";
 
 const HomePage = () => {
     return (
         <div className="bg-brand-white min-h-dvh overflow-x-hidden">
+            <section className="w-full bg-brand-secondary pt-[30px]">
+                <div className="container mx-auto">
+                    <NavBar />
+                </div>
+            </section>
             <SectionContainer bg={"bg-brand-secondary"}>
-                <NavBar />
                 <div className="flex flex-col justify-between items-center md:flex-row">
                     <div className="flex flex-col">
                         <motion.h1
@@ -20,6 +25,7 @@ const HomePage = () => {
                             transition={{
                                 duration: 0.5,
                                 ease: "easeInOut",
+                                type: "spring",
                             }}
                         >
                             Creamy Lassi & Sizzling Eats
@@ -31,6 +37,7 @@ const HomePage = () => {
                             transition={{
                                 duration: 0.5,
                                 ease: "easeInOut",
+                                type: "spring",
                             }}
                         >
                             From Mango fusion to spicy hot bites, we bring the
@@ -43,6 +50,7 @@ const HomePage = () => {
                             transition={{
                                 duration: 0.5,
                                 ease: "easeInOut",
+                                type: "spring",
                             }}
                         >
                             <Button
@@ -119,6 +127,7 @@ const HomePage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                         duration: 0.5,
+                        type: "spring",
                     }}
                 >
                     Meet our Top Sellers
@@ -151,6 +160,55 @@ const HomePage = () => {
                     />
                 </div>
             </SectionContainer>
+            <section className={`w-full bg-brand-primary overflow-hidden`}>
+                <div className="container mx-auto relative">
+                    <div className="flex">
+                        <div className="flex flex-col w-[550px] mr-[300px] shrink-0 relative z-10 py-[140px]">
+                            <h2 className="font-display font-bold text-5xl text-[#9B2F19]">
+                                Too Fresh to Last
+                            </h2>
+                            <p className="font-text font-bold text-brand-white text-[24px] mt-2">
+                                We Take Pride on That
+                            </p>
+                            <p className="font-text text-brand-white text-[16px] my-[18px]">
+                                Our flavor comes from simple, whole ingredients.
+                                We trade a long shelf life for an authentic,
+                                preservative-free taste.
+                            </p>
+                            <Button
+                                className="w-fit"
+                                type="secondary"
+                                text="Learn more about lassi"
+                                icon={"instagram"}
+                                onTap={() => {}}
+                            />
+                        </div>
+                        <motion.div
+                            className="flex w-screen absolute left-[700px] flex-wrap gap-0"
+                            animate={{ y: ["0%", "-50%"], x: ["0px", "10px"] }}
+                            transition={{
+                                y: {
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                    duration: 30,
+                                },
+                                x: {
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    duration: 0.5,
+                                    repeatType: "reverse",
+                                },
+                            }}
+                        >
+                            {[...Array(4)].map(() => (
+                                <div className="w-[1000px] max-w-none">
+                                    <img src={FreshLassiBG} />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
@@ -186,6 +244,7 @@ const TopSellersCard = ({
                         repeatType: "reverse",
                         ease: "easeInOut",
                     },
+                    type: "spring",
                 }}
             />
             <div className="flex flex-col md:w-[450px]">
@@ -195,7 +254,7 @@ const TopSellersCard = ({
                     }`}
                     initial={{ x: isRight ? -100 : 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.5, type: "spring" }}
                 >
                     {title}
                 </motion.h3>
@@ -205,7 +264,11 @@ const TopSellersCard = ({
                     } pt-[5px]`}
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, ease: easeInOut }}
+                    transition={{
+                        duration: 0.5,
+                        ease: easeInOut,
+                        type: "spring",
+                    }}
                 >
                     {body}
                 </motion.p>
