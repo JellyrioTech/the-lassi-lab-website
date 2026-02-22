@@ -160,11 +160,11 @@ const HomePage = () => {
                     />
                 </div>
             </SectionContainer>
-            <section className={`w-full bg-brand-primary overflow-hidden`}>
-                <div className="container mx-auto relative">
+            <section className={`w-full bg-brand-primary md:overflow-hidden`}>
+                <div className="flex container px-3 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex">
-                        <div className="flex flex-col w-[550px] mr-[300px] shrink-0 relative z-10 py-[140px]">
-                            <h2 className="font-display font-bold text-5xl text-[#9B2F19]">
+                        <div className="flex flex-col py-20 md:py-[140px] md:w-[550px] md:mr-[300px] md:shrink-0 md:z-10 md:relative">
+                            <h2 className="font-display font-bold text-4xl text-[#9B2F19] md:text-5xl">
                                 Too Fresh to Last
                             </h2>
                             <p className="font-text font-bold text-brand-white text-[24px] mt-2">
@@ -184,7 +184,7 @@ const HomePage = () => {
                             />
                         </div>
                         <motion.div
-                            className="flex w-screen absolute left-[700px] flex-wrap gap-0"
+                            className="hidden md:flex md:w-screen md:absolute md:left-[550px] md:flex-wrap md:gap-0 lg:left-[700px]"
                             animate={{ y: ["0%", "-50%"], x: ["0px", "10px"] }}
                             transition={{
                                 y: {
@@ -201,7 +201,7 @@ const HomePage = () => {
                             }}
                         >
                             {[...Array(4)].map(() => (
-                                <div className="w-[1000px] max-w-none">
+                                <div className="w-[800px] lg:w-[1000px] max-w-none">
                                     <img src={FreshLassiBG} />
                                 </div>
                             ))}
