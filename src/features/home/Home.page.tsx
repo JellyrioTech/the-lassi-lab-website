@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import Button from "../../components/button";
 import HeaderHeroImage from "../../assets/Header_Hero_Image.png";
 import { easeInOut, motion } from "motion/react";
@@ -10,6 +11,13 @@ import { NavBar } from "./NavBar";
 import MarketEventCard from "../../components/market-event-card";
 
 const HomePage = () => {
+    const eventsScrollRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = eventsScrollRef.current;
+        if (!el) return;
+        el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+    }, []);
     return (
         <div className="bg-brand-white min-h-dvh overflow-x-hidden">
             <section className="w-full bg-brand-secondary pt-[30px]">
@@ -246,21 +254,47 @@ const HomePage = () => {
                     <h2 className="font-display text-[32px] md:text-[50px] text-brand-black text-center">
                         We are Always Moving
                     </h2>
-                    <h3 className="font-text font-bold text-brand-primary text-[24px] md:text-[32px] text-center">
+                    <h3 className="font-text font-bold text-brand-primary text-[20px] md:text-[32px] text-center">
                         Find us in these next events
                     </h3>
-                    <div className="flex flex-wrap justify-center gap-6 mt-[45px]">
-                        {[...Array(3)].map((_, i) => (
-                            <MarketEventCard
-                                key={i}
-                                imageLink={Chicken22Image}
-                                name="Mughlai King Popcorn Chicken"
-                                address="123 Main St, Anytown, USA"
-                                date="2026-03-01"
-                                time="10:00 AM - 12:00 PM"
-                            />
-                        ))}
+                    <div className="relative mt-[45px]">
+                        <div
+                            ref={eventsScrollRef}
+                            className="flex flex-nowrap gap-6 overflow-x-auto overflow-y-hidden pb-2 px-8 scroll-smooth"
+                        >
+                            {[...Array(5)].map((_, i) => (
+                                <MarketEventCard
+                                    key={i}
+                                    imageLink={Chicken22Image}
+                                    name="Mughlai King Popcorn Chicken"
+                                    address="123 Main St, Anytown, USA"
+                                    date="2026-03-01"
+                                    time="10:00 AM - 12:00 PM"
+                                    className="shrink-0"
+                                />
+                            ))}
+                        </div>
+                        {/* Gradient edges to suggest scroll */}
+                        <div
+                            className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-brand-white to-transparent"
+                            aria-hidden
+                        />
+                        <div
+                            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-brand-white to-transparent"
+                            aria-hidden
+                        />
+                        <p className="flex items-center justify-center gap-2 mt-3 text-brand-grey text-sm font-text">
+                            <span aria-hidden>←</span>
+                            <span>Swipe or scroll to see more</span>
+                            <span aria-hidden>→</span>
+                        </p>
                     </div>
+                    <Button
+                        className="w-fit mx-auto mt-[45px]"
+                        type="secondary"
+                        text="See all our event calendars"
+                        onTap={() => {}}
+                    />
                 </div>
             </SectionContainer>
         </div>
