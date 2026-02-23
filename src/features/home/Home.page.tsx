@@ -7,6 +7,7 @@ import MangoLassi from "../../assets/MangoLassi.png";
 import FreshLassiBG from "../../assets/FreshLasiImage.png";
 import Chicken22Image from "../../assets/chicken22.png";
 import { NavBar } from "./NavBar";
+import MarketEventCard from "../../components/market-event-card";
 
 const HomePage = () => {
     return (
@@ -240,6 +241,28 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+            <SectionContainer>
+                <div className="flex flex-col">
+                    <h2 className="font-display text-[32px] md:text-[50px] text-brand-black text-center">
+                        We are Always Moving
+                    </h2>
+                    <h3 className="font-text font-bold text-brand-primary text-[24px] md:text-[32px] text-center">
+                        Find us in these next events
+                    </h3>
+                    <div className="flex flex-wrap justify-center gap-6 mt-[45px]">
+                        {[...Array(3)].map((_, i) => (
+                            <MarketEventCard
+                                key={i}
+                                imageLink={Chicken22Image}
+                                name="Mughlai King Popcorn Chicken"
+                                address="123 Main St, Anytown, USA"
+                                date="2026-03-01"
+                                time="10:00 AM - 12:00 PM"
+                            />
+                        ))}
+                    </div>
+                </div>
+            </SectionContainer>
         </div>
     );
 };
