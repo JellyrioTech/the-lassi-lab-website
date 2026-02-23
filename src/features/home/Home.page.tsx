@@ -5,6 +5,7 @@ import SectionContainer from "../../components/section-container";
 import MapleLassi from "../../assets/Maple Lassi.png";
 import MangoLassi from "../../assets/MangoLassi.png";
 import FreshLassiBG from "../../assets/FreshLasiImage.png";
+import Chicken22Image from "../../assets/chicken22.png";
 import { NavBar } from "./NavBar";
 
 const HomePage = () => {
@@ -206,6 +207,36 @@ const HomePage = () => {
                                 </div>
                             ))}
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+            <section className={`w-full bg-brand-secondary`}>
+                <div className="flex flex-col container mx-auto px-3 py-[50px] md:px-0 md:py-0">
+                    <div className="flex flex-col md:flex-row justify-between items-center">
+                        <img
+                            src={Chicken22Image}
+                            className="w-[300px] rounded-[20px] border-brand-black border-10 md:rounded-none md:w-[400px] lg:w-[500px] drop-shadow-img md:border-15 md:-rotate-[5deg]"
+                        />
+                        <div className="flex flex-col pt-[50px] md:pb-0 md:pt-0 md:items-end mx-2 md:w-[500px]">
+                            <h2 className="font-display text-left text-xl md:text-right md:text-2xl lg:text-3xl text-[#7E571F]">
+                                NEW ITEM ALERT!
+                            </h2>
+                            <p className="font-display  text-brand-black text-2xl text-left md:text-right md:text-3xl lg:text-4xl">
+                                Mughlai King Popcorn Chicken
+                            </p>
+                            <p className="font-text text-brand-black text-left text-[16px] md:text-right mt-[22px]">
+                                Crafted with our secret blend of spices, we’ve
+                                created the perfect popcorn chicken that pairs
+                                beautifully with our Lassi. It's so flavorful on
+                                its own, you won't even need sauce!
+                            </p>
+                            <Button
+                                className="w-fit mt-[22px]"
+                                type="primary"
+                                text="Explore our Menu"
+                                onTap={() => {}}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
