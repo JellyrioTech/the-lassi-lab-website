@@ -252,12 +252,18 @@ const HomePage = () => {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <img
+                        <motion.img
                             src={
                                 "https://static1.squarespace.com/static/68716b29301e237a6993e8ab/t/68793d7b8e7e9e07969520cc/1770063806023/"
                             }
                             alt="Event"
                             className="w-[200px] md:w-[300px]"
+                            animate={{ scale: [1, 1.06, 1] }}
+                            transition={{
+                                duration: 3.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
                         />
                     </div>
                 </div>
