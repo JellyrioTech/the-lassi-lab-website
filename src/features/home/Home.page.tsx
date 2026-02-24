@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../components/button";
 import HeaderHeroImage from "../../assets/Header_Hero_Image.png";
 import { easeInOut, motion } from "motion/react";
@@ -10,15 +10,22 @@ import Chicken22Image from "../../assets/chicken22.png";
 import { NavBar, navLinks } from "./NavBar";
 import MarketEventCard from "../../components/market-event-card";
 import OwnerImage from "../../assets/Owner Image.png";
+import type { MarketEvent } from "../../types/Event.type";
+import { getUpcomingEvents } from "../../services/upcomingEvents.service";
 
 const HomePage = () => {
     const eventsScrollRef = useRef<HTMLDivElement>(null);
+    const [upcomingEvents, setUpcomingEvents] = useState<MarketEvent[]>([]);
+
+    useEffect(() => {
+        getUpcomingEvents().then(setUpcomingEvents);
+    }, []);
 
     useEffect(() => {
         const el = eventsScrollRef.current;
         if (!el) return;
         el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
-    }, []);
+    }, [upcomingEvents]);
     return (
         <div className="bg-brand-white min-h-dvh overflow-x-hidden">
             <section className="w-full bg-brand-secondary pt-[30px]">
@@ -407,14 +414,14 @@ const HomePage = () => {
                             ref={eventsScrollRef}
                             className="flex flex-nowrap gap-6 overflow-x-auto overflow-y-hidden pb-2 px-8 scroll-smooth"
                         >
-                            {[...Array(5)].map((_, i) => (
+                            {upcomingEvents.map((event) => (
                                 <MarketEventCard
-                                    key={i}
-                                    imageLink={Chicken22Image}
-                                    name="Mughlai King Popcorn Chicken"
-                                    address="123 Main St, Anytown, USA"
-                                    date="2026-03-01"
-                                    time="10:00 AM - 12:00 PM"
+                                    key={event.id}
+                                    imageLink={event.imageLink}
+                                    name={event.name}
+                                    address={event.address}
+                                    date={event.date}
+                                    time={event.time}
                                     className="shrink-0"
                                 />
                             ))}
