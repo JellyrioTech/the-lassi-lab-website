@@ -9,6 +9,7 @@ import FreshLassiBG from "../../assets/FreshLasiImage.png";
 import Chicken22Image from "../../assets/chicken22.png";
 import { NavBar } from "./NavBar";
 import MarketEventCard from "../../components/market-event-card";
+import OwnerImage from "../../assets/Owner Image.png";
 
 const HomePage = () => {
     const eventsScrollRef = useRef<HTMLDivElement>(null);
@@ -222,9 +223,16 @@ const HomePage = () => {
             <section className={`w-full bg-brand-secondary`}>
                 <div className="flex flex-col container mx-auto px-3 py-[50px] md:px-0 md:py-0">
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <img
+                        <motion.img
                             src={Chicken22Image}
                             className="w-[300px] rounded-[20px] border-brand-black border-10 md:rounded-none md:w-[400px] lg:w-[500px] drop-shadow-img md:border-15 md:-rotate-[5deg]"
+                            animate={{ rotateY: [-30, -8, -30] }}
+                            transition={{
+                                duration: 2.5,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                                ease: "easeInOut",
+                            }}
                         />
                         <div className="flex flex-col pt-[50px] md:pb-0 md:pt-0 md:items-end mx-2 md:w-[500px]">
                             <h2 className="font-display text-left text-xl md:text-right md:text-2xl lg:text-3xl text-[#7E571F]">
@@ -297,6 +305,45 @@ const HomePage = () => {
                     />
                 </div>
             </SectionContainer>
+            <section className="w-full bg-brand-primary">
+                <div className="flex container mx-auto px-4 sm:px-0 sm:mx-auto md:relative">
+                    <div className="flex flex-col py-[45px] md:py-0 md:flex-row justify-between items-center gap-[45px]">
+                        <div className="flex flex-col">
+                            <h2 className="font-display text-3xl lg:text-4xl text-[#631100]">
+                                Bring Global Fusion to Your Next Event
+                            </h2>
+                            <p className="font-display text-brand-white text-[18px] lg:text-[24px]">
+                                Make your celebration unforgettable with our
+                                signature Lassi and hot bites.
+                            </p>
+                            <p className="font-text text-brand-white text-[16px] py-[20px]">
+                                From intimate birthdays to large corporate
+                                weddings, we bring the flavor. Our team handles
+                                the food with the highest safety standards, so
+                                you can relax and enjoy the moment while we
+                                serve up freshness.
+                            </p>
+                            <Button
+                                className="w-fit"
+                                type="secondary"
+                                text="View Catering Menu"
+                                onTap={() => {}}
+                            />
+                        </div>
+                        <motion.img
+                            src={OwnerImage}
+                            className="w-[300px] rounded-[20px] md:w-[400px] lg:w-[500px] drop-shadow-img md:-rotate-[-5deg]"
+                            animate={{ y: [0, -12, 0] }}
+                            transition={{
+                                duration: 2.5,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                                ease: "easeInOut",
+                            }}
+                        />
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
