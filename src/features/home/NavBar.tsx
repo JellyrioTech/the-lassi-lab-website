@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo from "../../assets/logo.svg";
 import { AnimatePresence, motion } from "motion/react";
 
-const navLinks = [
+export const navLinks = [
     { linkText: "Home", path: "/" },
     { linkText: "About Us", path: "/" },
     { linkText: "Event Calendar", path: "/" },
