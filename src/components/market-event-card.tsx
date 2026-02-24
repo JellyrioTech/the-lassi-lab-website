@@ -4,7 +4,7 @@ export interface MarketEventCardProps {
     imageLink: string;
     name: string;
     address: string;
-    date: string;
+    date: Date;
     time: string;
     onCheckMenu?: () => void;
     className?: string;
@@ -104,7 +104,14 @@ function MarketEventCard({
                 </p>
                 <p className="flex items-start gap-2 text-sm">
                     <CalendarIcon />
-                    <span>{date}</span>
+                    <span>
+                        {date.toLocaleDateString("en-US", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        })}
+                    </span>
                 </p>
                 <p className="flex items-start gap-2 text-sm">
                     <ClockIcon />

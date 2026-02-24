@@ -6,12 +6,12 @@ export type CalendarEvent = {
     endTime: string;
 };
 
-/** Event shape used for MarketEventCard (view-ready: date/time as display strings) */
+/** Event shape used for MarketEventCard */
 export type MarketEvent = {
     id: string;
     imageLink: string;
     name: string;
     address: string;
-    date: string;
+    date: Date;
     time: string;
 };

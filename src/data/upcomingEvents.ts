@@ -7,7 +7,7 @@ export const upcomingEvents: MarketEvent[] = [
         imageLink: Chicken22Image,
         name: "Mughlai King Popcorn Chicken",
         address: "123 Main St, Anytown, USA",
-        date: "2026-03-01",
+        date: new Date("2026-03-01"),
         time: "10:00 AM - 12:00 PM",
     },
     {
@@ -15,7 +15,7 @@ export const upcomingEvents: MarketEvent[] = [
         imageLink: Chicken22Image,
         name: "First Street Market",
         address: "57 First Street, Cambridge, MA",
-        date: "December 9, 2026, Friday",
+        date: new Date(2026, 11, 9),
         time: "11:00 AM - 4:00 PM",
     },
     {
@@ -23,7 +23,7 @@ export const upcomingEvents: MarketEvent[] = [
         imageLink: Chicken22Image,
         name: "Holiday Makers Market",
         address: "McGlynn Elementary School, Medford, MA",
-        date: "December 10, 2026",
+        date: new Date(2026, 11, 10),
         time: "5:30 PM - 8:30 PM",
     },
     {
@@ -31,7 +31,7 @@ export const upcomingEvents: MarketEvent[] = [
         imageLink: Chicken22Image,
         name: "Farmers Market",
         address: "First Street Market, Cambridge, MA",
-        date: "January 17, 2027",
+        date: new Date(2027, 0, 17),
         time: "11:00 AM - 4:00 PM",
     },
     {
@@ -39,7 +39,15 @@ export const upcomingEvents: MarketEvent[] = [
         imageLink: Chicken22Image,
         name: "Hingham Winter Farmers Market",
         address: "204 Union Street, Hingham, MA",
-        date: "January 10, 2027",
+        date: new Date(2027, 0, 10),
         time: "10:00 AM - 1:00 PM",
+    },
+    {
+        id: "6",
+        imageLink: Chicken22Image,
+        name: "This should be hidden",
+        address: "123 Main St, Anytown, USA",
+        date: new Date("2025-03-01"),
+        time: "10:00 AM - 12:00 PM",
     },
 ];
