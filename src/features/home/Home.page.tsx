@@ -26,6 +26,9 @@ const HomePage = () => {
         if (!el) return;
         el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
     }, [upcomingEvents]);
+
+    const nextEvent = upcomingEvents[0];
+
     return (
         <div className="bg-brand-white min-h-dvh overflow-x-hidden">
             <section className="w-full bg-brand-secondary pt-[30px]">
@@ -159,122 +162,127 @@ const HomePage = () => {
                     />
                 </div>
             </SectionContainer>
-            <SectionContainer
-                bg={"bg-brand-black"}
-                sectionClassName="relative overflow-hidden"
-            >
-                {/* Flowing waves – two layers, opposite directions, different speeds */}
-                <motion.div
-                    className="absolute inset-0 w-[120%] pointer-events-none"
-                    initial={false}
-                    animate={{ x: ["-20%", "0%"] }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "linear",
-                        repeatType: "reverse",
-                    }}
-                >
-                    <svg
-                        className="w-full h-full text-brand-white/10"
-                        viewBox="0 0 600 120"
-                        preserveAspectRatio="none"
-                        aria-hidden
+            {nextEvent && (
+                    <SectionContainer
+                        bg={"bg-brand-black"}
+                        sectionClassName="relative overflow-hidden"
                     >
-                        <path
-                            d="M0 60 C80 40 120 80 200 60 S320 40 400 60 S520 80 600 60"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M0 80 C100 55 180 95 280 75 S380 50 480 75 S580 100 700 75"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M0 40 C70 65 150 25 250 45 S350 70 450 45 S550 20 650 45"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                        />
-                    </svg>
-                </motion.div>
-                <motion.div
-                    className="absolute inset-0 w-[120%] pointer-events-none"
-                    initial={false}
-                    animate={{ x: ["0%", "-20%"] }}
-                    transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "linear",
-                        repeatType: "reverse",
-                    }}
-                >
-                    <svg
-                        className="w-full h-full text-brand-white/5"
-                        viewBox="0 0 600 120"
-                        preserveAspectRatio="none"
-                        aria-hidden
-                    >
-                        <path
-                            d="M0 50 C90 70 170 30 270 50 S390 75 490 50 S610 25 710 50"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M0 95 C120 70 200 100 300 85 S420 60 520 85"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.2"
-                            strokeLinecap="round"
-                        />
-                    </svg>
-                </motion.div>
-                <div className="relative z-10 flex sm:flex-row justify-between items-center flex-wrap gap-[20px]">
-                    <div className="flex flex-col">
-                        <h2 className="font-display text-4xl lg:text-5xl text-brand-white text-left">
-                            Our Next Event
-                        </h2>
-                        <h3 className="font-text text-brand-secondary text-[24px] pt-[5px]">
-                            February 24th, 2026
-                        </h3>
-                        <p className="font-text text-brand-white text-[16px] pt-[20px]">
-                            <b>Location:</b> 123 Main St, Anytown, USA
-                        </p>
-                        <p className="font-text text-brand-white text-[16px]">
-                            <b>Time: </b>10:00 AM - 12:00 PM
-                        </p>
-                        <Button
-                            type="primary"
-                            text="Pre order now"
-                            onTap={() => {}}
-                            className="w-fit mt-[20px]"
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <motion.img
-                            src={
-                                "https://static1.squarespace.com/static/68716b29301e237a6993e8ab/t/68793d7b8e7e9e07969520cc/1770063806023/"
-                            }
-                            alt="Event"
-                            className="w-[200px] md:w-[300px]"
-                            animate={{ scale: [1, 1.06, 1] }}
+                        {/* Flowing waves – two layers, opposite directions, different speeds */}
+                        <motion.div
+                            className="absolute inset-0 w-[120%] pointer-events-none"
+                            initial={false}
+                            animate={{ x: ["-20%", "0%"] }}
                             transition={{
-                                duration: 3.5,
+                                duration: 15,
                                 repeat: Infinity,
-                                ease: "easeInOut",
+                                ease: "linear",
+                                repeatType: "reverse",
                             }}
-                        />
-                    </div>
-                </div>
-            </SectionContainer>
+                        >
+                            <svg
+                                className="w-full h-full text-brand-white/10"
+                                viewBox="0 0 600 120"
+                                preserveAspectRatio="none"
+                                aria-hidden
+                            >
+                                <path
+                                    d="M0 60 C80 40 120 80 200 60 S320 40 400 60 S520 80 600 60"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                />
+                                <path
+                                    d="M0 80 C100 55 180 95 280 75 S380 50 480 75 S580 100 700 75"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1"
+                                    strokeLinecap="round"
+                                />
+                                <path
+                                    d="M0 40 C70 65 150 25 250 45 S350 70 450 45 S550 20 650 45"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                        </motion.div>
+                        <motion.div
+                            className="absolute inset-0 w-[120%] pointer-events-none"
+                            initial={false}
+                            animate={{ x: ["0%", "-20%"] }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                ease: "linear",
+                                repeatType: "reverse",
+                            }}
+                        >
+                            <svg
+                                className="w-full h-full text-brand-white/5"
+                                viewBox="0 0 600 120"
+                                preserveAspectRatio="none"
+                                aria-hidden
+                            >
+                                <path
+                                    d="M0 50 C90 70 170 30 270 50 S390 75 490 50 S610 25 710 50"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1"
+                                    strokeLinecap="round"
+                                />
+                                <path
+                                    d="M0 95 C120 70 200 100 300 85 S420 60 520 85"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.2"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                        </motion.div>
+                        <div className="relative z-10 flex sm:flex-row justify-between items-center flex-wrap gap-[20px]">
+                            <div className="flex flex-col">
+                                <h2 className="font-display text-4xl lg:text-5xl text-brand-white text-left">
+                                    Our Next Event
+                                </h2>
+                                <h3 className="font-text text-brand-secondary text-[24px] pt-[5px]">
+                                    {nextEvent.date.toLocaleDateString("en-US", {
+                                        month: "long",
+                                        day: "numeric",
+                                        year: "numeric",
+                                    })}
+                                </h3>
+                                <p className="font-text text-brand-white text-[16px] pt-[20px]">
+                                    <b>Location:</b> {nextEvent.address}
+                                </p>
+                                <p className="font-text text-brand-white text-[16px]">
+                                    <b>Time: </b>
+                                    {nextEvent.time}
+                                </p>
+                                <Button
+                                    type="primary"
+                                    text="Pre order now"
+                                    onTap={() => {}}
+                                    className="w-fit mt-[20px]"
+                                />
+                            </div>
+                            <div className="flex flex-col">
+                                <motion.img
+                                    src={nextEvent.imageLink}
+                                    alt={nextEvent.name}
+                                    className="w-[200px] md:w-[300px]"
+                                    animate={{ scale: [1, 1.06, 1] }}
+                                    transition={{
+                                        duration: 3.5,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </SectionContainer>
+            )}
             <SectionContainer>
                 <motion.h2
                     className="text-4xl font-display font-bold text-brand-black md:text-5xl"
