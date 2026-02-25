@@ -6,7 +6,7 @@ export const navLinks = [
     { linkText: "Home", path: "/" },
     { linkText: "About Us", path: "/" },
     { linkText: "Event Calendar", path: "/" },
-    { linkText: "Menu", path: "/" },
+    { linkText: "Menu", path: "/menu" },
     { linkText: "Contact Us", path: "/" },
 ];
 
