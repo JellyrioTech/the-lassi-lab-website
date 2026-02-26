@@ -310,22 +310,6 @@ const HomePage = () => {
                         availableIn={["vegan", "dairy"]}
                     />
                 </div>
-                <div className="flex gap-[5px]">
-                    <MenuItemCard
-                        picture={MangoLassi}
-                        name="Mango Cloud Lassi"
-                        description="Double Mango Lassi Made with a secret blend of two mango
-                    varieties, fresh milk, and rich yogurt. It’s thick, creamy,
-                    and sold out at almost every pop-up. Taste the hype."
-                    />
-                    <MenuItemCard
-                        picture={MangoLassi}
-                        name="Mango Cloud Lassi"
-                        description="Double Mango Lassi Made with a secret blend of two mango
-                    varieties, fresh milk, and rich yogurt. It’s thick, creamy,
-                    and sold out at almost every pop-up. Taste the hype."
-                    />
-                </div>
                 <div className="flex justify-center">
                     <Button
                         type="primary"
