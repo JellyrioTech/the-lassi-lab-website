@@ -1,29 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Cabin:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --color-brand-white: #fff7f5;
+    --color-brand-white: #fbf3d5;
     --color-brand-black: #222020;
     --color-brand-black-rgb: 34, 32, 32;
-    --color-brand-primary-light: #d8745f;
-    --color-brand-primary: #d8745f;
-    --color-brand-primary-dark: #9a3723;
-    --color-brand-tertiary: #e9c5bd;
-    --color-brand-grey: #6c6868;
-    --color-brand-secondary: #ffbc5c;
+    --color-brand-primary: #ff762e;
+    --color-brand-primary-dark: #c42b3e;
+    --color-brand-secondary: #ffcb37;
+    --color-brand-tertiary:#359b5e;
 
-    --font-display: "Calistoga", serif;
-    --font-text: "Roboto", sans-serif;
-
-    --gradient-primary: linear-gradient(
-        180deg,
-        var(--color-brand-primary-light) 0%,
-        var(--color-brand-primary-dark) 100%
-    );
-
-    --drop-shadow-img: 0 4px 4px rgba(var(--color-brand-black-rgb), 0.25);
-    --drop-shadow-b: 0 4px 0px rgba(var(--color-brand-black-rgb), 100);
-    --drop-shadow-r: 4px 4px 0px rgba(var(--color-brand-black-rgb), 100);
+    --font-heading: "Lilita One", serif;
+    --font-subheading: "Balsamiq Sans", serif;
+    --font-text: "Cabin", sans-serif;
 }
 
 :root {
@@ -37,7 +26,7 @@
 }
 
 h1 {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
 }
 
 body {

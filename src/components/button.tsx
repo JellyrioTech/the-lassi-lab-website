@@ -5,7 +5,7 @@ interface ButtonProps {
     icon?: "instagram" | "facebook";
     text: string;
     onTap: () => void;
-    type?: "primary" | "secondary";
+    type?: "primary" | "secondary" | "tertiary"
     className?: string;
 }
 
@@ -24,13 +24,18 @@ function Button({
     const shadowClass = isPressed ? "" : "drop-shadow-r";
     switch (type) {
         case "secondary":
-            buttonColor = "bg-brand-tertiary";
-            iconColor = "#222020";
+            buttonColor = "bg-brand-secondary";
+            iconColor = "text-brand-black";
             textColor = "text-brand-black";
             break;
         case "primary":
             buttonColor = "bg-brand-primary";
-            iconColor = "#FFF7F5";
+            iconColor = "text-brand-white";
+            textColor = "text-brand-white";
+            break;
+        case "tertiary":
+            buttonColor = "bg-brand-tertiary";
+            iconColor = "text-brand-white";
             textColor = "text-brand-white";
             break;
     }

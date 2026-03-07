@@ -92,7 +92,7 @@ function MarketEventCard({
             </div>
 
             {/* Name */}
-            <h3 className="font-display font-bold text-xl text-brand-black text-center">
+            <h3 className="font-heading font-bold text-xl text-brand-black text-center">
                 {name}
             </h3>
 

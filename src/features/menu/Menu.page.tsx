@@ -1,18 +1,18 @@
 import { PageLayout } from "../../components/PageLayout";
 import MenuItemCard from "../../components/menu-item-card";
 import SectionContainer from "../../components/section-container";
-import MangoLassi from "../../assets/MangoLassi.png";
+import MangoLassi from "../../assets/products/MangoLassi.png";
 
 const MenuPage = () => {
     return (
         <PageLayout>
             <SectionContainer sectionClassName={"min-h-dvh"}>
-                <h1 className="font-display text-[32px] md:text-[50px] text-brand-black text-right">
+                <h1 className="font-heading text-[32px] md:text-[50px] text-brand-black text-right">
                     Our Menu
                 </h1>
                 <div className="flex flex-col">
                     <div className="flex px-[15px] py-[5px] bg-brand-black">
-                        <h2 className="font-display text-[24px] md:text-[32px] text-brand-white text-left">
+                        <h2 className="font-heading text-[24px] md:text-[32px] text-brand-white text-left">
                             Lassi
                         </h2>
                     </div>

@@ -3,10 +3,10 @@ import Button from "../../components/button";
 import HeaderHeroImage from "../../assets/Header_Hero_Image.png";
 import { easeInOut, motion } from "motion/react";
 import SectionContainer from "../../components/section-container";
-import MapleLassi from "../../assets/Maple Lassi.png";
-import MangoLassi from "../../assets/MangoLassi.png";
-import FreshLassiBG from "../../assets/FreshLasiImage.png";
-import Chicken22Image from "../../assets/chicken22.png";
+import MapleLassi from "../../assets/products/Maple Lassi.png";
+import MangoLassi from "../../assets/products/MangoLassi.png";
+import FreshLassiBG from "../../assets/products/FreshLasiImage.png";
+import popcornchickenposter from "../../assets/products/popcornChickenPoster.jpg";
 import { PageLayout } from "../../components/PageLayout";
 import MarketEventCard from "../../components/market-event-card";
 import OwnerImage from "../../assets/Owner Image.png";
@@ -32,11 +32,11 @@ const HomePage = () => {
 
     return (
         <PageLayout>
-            <SectionContainer bg={"bg-brand-secondary"}>
+            <SectionContainer bg={"bg-brand-primary"}>
                 <div className="flex flex-col justify-between items-center md:flex-row">
                     <div className="flex flex-col">
                         <motion.h1
-                            className="font-display font-bold text-brand-black text-3xl lg:text-4xl"
+                            className="font-heading font-bold text-brand-black text-3xl lg:text-5xl"
                             initial={{ opacity: 0, y: -100 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{
@@ -48,7 +48,7 @@ const HomePage = () => {
                             Creamy Lassi & Sizzling Eats
                         </motion.h1>
                         <motion.p
-                            className="font-text text-brand-black text-[16px] mt-[15px]"
+                            className="font-subheading text-brand-black text-lg md:text-xl mt-[15px]"
                             initial={{ opacity: 0, x: -100 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{
@@ -57,9 +57,7 @@ const HomePage = () => {
                                 type: "spring",
                             }}
                         >
-                            From Mango fusion to spicy hot bites, we bring the
-                            best of global street food straight to your
-                            neighborhood.
+                            Authentic South Asian street food reimagined with global flavors - from high-protein lassis, delicious chicken bites, and bowls built to satisfy.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 100 }}
@@ -72,9 +70,8 @@ const HomePage = () => {
                         >
                             <Button
                                 className="w-fit mt-[25px]"
-                                icon={"instagram"}
                                 text={"See Upcoming Events"}
-                                type={"primary"}
+                                type={"tertiary"}
                                 onTap={() => {}}
                             />
                         </motion.div>
@@ -115,10 +112,10 @@ const HomePage = () => {
                         // h-[50px] controls the height of the wave
                         className="relative block w-[calc(100%+1.3px)] h-[60px] "
                     >
-                        {/* This path draws the wave. fill-white matches the section BELOW */}
+                        {/* This path draws the wave. fill matches the yellow section above */}
                         <path
                             d="M0,0 L1200,0 L1200,50 Q1050,100 900,50 T600,50 T300,50 T0,50 Z"
-                            className="fill-brand-secondary"
+                            className="fill-brand-primary"
                         />
                     </svg>
                     <svg
@@ -129,16 +126,16 @@ const HomePage = () => {
                         // h-[50px] controls the height of the wave
                         className="relative block w-[calc(100%+1.3px)] h-[60px] "
                     >
-                        {/* This path draws the wave. fill-white matches the section BELOW */}
+                        {/* This path draws the wave. fill matches the yellow section above */}
                         <path
                             d="M0,0 L1200,0 L1200,50 Q1050,100 900,50 T600,50 T300,50 T0,50 Z"
-                            className="fill-brand-secondary"
+                            className="fill-brand-primary"
                         />
                     </svg>
                 </motion.div>
             </div>
             <SectionContainer>
-                <h2 className="font-display text-3xl lg:text-4xl text-brand-primary text-center">
+                <h2 className="font-heading text-3xl lg:text-4xl text-brand-primary text-center">
                     Order Online Available Now
                 </h2>
                 <div className="flex justify-center pt-[45px] gap-[20px] flex-wrap">
@@ -239,7 +236,7 @@ const HomePage = () => {
                     </motion.div>
                     <div className="relative z-10 flex sm:flex-row justify-between items-center flex-wrap gap-[20px]">
                         <div className="flex flex-col">
-                            <h2 className="font-display text-4xl lg:text-5xl text-brand-white text-left">
+                            <h2 className="font-heading text-4xl lg:text-5xl text-brand-white text-left">
                                 Our Next Event
                             </h2>
                             <h3 className="font-text text-brand-secondary text-[24px] pt-[5px]">
@@ -281,7 +278,7 @@ const HomePage = () => {
             )}
             <SectionContainer>
                 <motion.h2
-                    className="text-4xl font-display font-bold text-brand-black md:text-5xl"
+                    className="text-4xl font-heading font-bold text-brand-primary md:text-5xl"
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -319,11 +316,11 @@ const HomePage = () => {
                     />
                 </div>
             </SectionContainer>
-            <section className={`w-full bg-brand-primary md:overflow-hidden`}>
+            <section className={`w-full bg-brand-primary-dark md:overflow-hidden`}>
                 <div className="flex container px-3 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex">
                         <div className="flex flex-col py-20 md:py-[140px] md:w-[550px] md:mr-[300px] md:shrink-0 md:z-10 md:relative">
-                            <h2 className="font-display font-bold text-4xl text-[#9B2F19] md:text-5xl">
+                            <h2 className="font-heading font-bold text-4xl text-brand-black md:text-5xl">
                                 Too Fresh to Last
                             </h2>
                             <p className="font-text font-bold text-brand-white text-[24px] mt-2">
@@ -335,10 +332,9 @@ const HomePage = () => {
                                 preservative-free taste.
                             </p>
                             <Button
-                                className="w-fit"
+                                className="w-fit mt-5"
                                 type="secondary"
                                 text="Learn more about lassi"
-                                icon={"instagram"}
                                 onTap={() => {}}
                             />
                         </div>
@@ -372,7 +368,7 @@ const HomePage = () => {
                 <div className="flex flex-col container mx-auto px-3 py-[50px] md:px-0 md:py-0">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <motion.img
-                            src={Chicken22Image}
+                            src={popcornchickenposter}
                             className="w-[300px] rounded-[20px] border-brand-black border-10 md:rounded-none md:w-[400px] lg:w-[500px] drop-shadow-img md:border-15 md:-rotate-[5deg]"
                             animate={{ rotateY: [-30, -8, -30] }}
                             transition={{
@@ -383,11 +379,11 @@ const HomePage = () => {
                             }}
                         />
                         <div className="flex flex-col pt-[50px] md:pb-0 md:pt-0 md:items-end mx-2 md:w-[500px]">
-                            <h2 className="font-display text-left text-xl md:text-right md:text-2xl lg:text-3xl text-[#7E571F]">
+                            <h2 className="font-heading text-left text-xl md:text-right md:text-2xl lg:text-3xl text-brand-primary-dark">
                                 NEW ITEM ALERT!
                             </h2>
-                            <p className="font-display  text-brand-black text-2xl text-left md:text-right md:text-3xl lg:text-4xl">
-                                Mughlai King Popcorn Chicken
+                            <p className="font-heading  text-brand-black text-2xl text-left md:text-right md:text-3xl lg:text-4xl">
+                                Mughlai Popcorn Chicken
                             </p>
                             <p className="font-text text-brand-black text-left text-[16px] md:text-right mt-[22px]">
                                 Crafted with our secret blend of spices, we’ve
@@ -397,7 +393,7 @@ const HomePage = () => {
                             </p>
                             <Button
                                 className="w-fit mt-[22px]"
-                                type="primary"
+                                type="tertiary"
                                 text="Explore our Menu"
                                 onTap={() => {}}
                             />
@@ -407,7 +403,7 @@ const HomePage = () => {
             </section>
             <SectionContainer>
                 <div className="flex flex-col">
-                    <h2 className="font-display text-[32px] md:text-[50px] text-brand-black text-center">
+                    <h2 className="font-heading text-[32px] md:text-[50px] text-brand-black text-center">
                         We are Always Moving
                     </h2>
                     <h3 className="font-text font-bold text-brand-primary text-[20px] md:text-[32px] text-center">
@@ -457,19 +453,11 @@ const HomePage = () => {
                 <div className="flex container mx-auto px-4 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex flex-col py-[45px] md:py-0 md:flex-row justify-between items-center gap-[45px]">
                         <div className="flex flex-col">
-                            <h2 className="font-display text-3xl lg:text-4xl text-[#631100]">
-                                Bring Global Fusion to Your Next Event
+                            <h2 className="font-heading text-3xl lg:text-4xl text-brand-black">
+                            Global Fusion Catering
                             </h2>
-                            <p className="font-display text-brand-white text-[18px] lg:text-[24px]">
-                                Make your celebration unforgettable with our
-                                signature Lassi and hot bites.
-                            </p>
-                            <p className="font-text text-brand-white text-[16px] py-[20px]">
-                                From intimate birthdays to large corporate
-                                weddings, we bring the flavor. Our team handles
-                                the food with the highest safety standards, so
-                                you can relax and enjoy the moment while we
-                                serve up freshness.
+                            <p className="font-subheading text-brand-black text-[16px] py-[20px]">
+                            From office late-nights to home celebrations, we bring the heat. Experience our signature chicken curry bowls, crispy paratha rolls, and refreshing, protein-packed lassi. Chef-prepared, safety-certified, and delivered fresh.
                             </p>
                             <Button
                                 className="w-fit"
@@ -532,7 +520,7 @@ const TopSellersCard = ({
             />
             <div className="flex flex-col md:w-[450px]">
                 <motion.h3
-                    className={`font-display text-[24px] text-brand-black ${
+                    className={`font-heading text-[24px] text-brand-black ${
                         isRight ? "md:text-left" : "md:text-right"
                     }`}
                     initial={{ x: isRight ? -100 : 100, opacity: 0 }}

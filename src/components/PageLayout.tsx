@@ -7,7 +7,7 @@ interface PageLayoutProps {
 export function PageLayout({ children }: PageLayoutProps) {
     return (
         <div className="bg-brand-white min-h-dvh overflow-x-hidden">
-            <header className="w-full bg-brand-secondary pt-[30px]">
+            <header className="w-full bg-brand-primary pt-[30px]">
                 <div className="container mx-auto">
                     <NavBar />
                 </div>
