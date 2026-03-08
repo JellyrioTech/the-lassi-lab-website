@@ -4,10 +4,10 @@ import { AnimatePresence, motion } from "motion/react";
 
 export const navLinks = [
     { linkText: "Home", path: "/" },
-    { linkText: "About Us", path: "/" },
-    { linkText: "Event Calendar", path: "/" },
+    { linkText: "About Us", path: "/coming-soon" },
+    { linkText: "Event Calendar", path: "/coming-soon" },
     { linkText: "Menu", path: "/menu" },
-    { linkText: "Contact Us", path: "/" },
+    { linkText: "Contact Us", path: "/coming-soon" },
 ];
 
 export const NavBar = () => {

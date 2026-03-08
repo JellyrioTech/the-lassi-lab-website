@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/button";
 import HeaderHeroImage from "../../assets/Header_Hero_Image.png";
 import { easeInOut, motion } from "motion/react";
@@ -15,6 +16,7 @@ import { getUpcomingEvents } from "../../services/upcomingEvents.service";
 import MenuItemCard from "../../components/menu-item-card";
 
 const HomePage = () => {
+    const navigate = useNavigate();
     const eventsScrollRef = useRef<HTMLDivElement>(null);
     const [upcomingEvents, setUpcomingEvents] = useState<MarketEvent[]>([]);
 
@@ -463,7 +465,7 @@ const HomePage = () => {
                                 className="w-fit"
                                 type="secondary"
                                 text="View Catering Menu"
-                                onTap={() => {}}
+                                onTap={() => navigate("/coming-soon")}
                             />
                         </div>
                         <motion.img
