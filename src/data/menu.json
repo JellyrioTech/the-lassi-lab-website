@@ -1,153 +1,148 @@
 {
-  "environment": "production",
-  "menuId": "KEW6GQXT6LBF3JPHCRMNFWNI",
-  "fetchedAt": "2026-03-08T18:22:33.239Z",
-  "itemCount": 7,
-  "items": [
-    {
-      "categoryName": "Classic Protein Lassi Drinks",
-      "items": [
+    "environment": "production",
+    "menuId": "KEW6GQXT6LBF3JPHCRMNFWNI",
+    "fetchedAt": "2026-03-09T21:14:53.519Z",
+    "itemCount": 7,
+    "items": [
         {
-          "name": "Mango Cloud Lassi",
-          "description": "milk, greek yogurt, mango puree from three different region, salt\n* Allergen: Contains Dairy",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e3fad120c36bd4f843af53c3aba30909f3a5830e/original.png"
+            "categoryName": "Classic Protein Lassi Drinks",
+            "items": [
+                {
+                    "name": "Mango Cloud Lassi",
+                    "description": "milk, greek yogurt, mango puree from three different region, salt\n* Allergen: Contains Dairy",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/e3fad120c36bd4f843af53c3aba30909f3a5830e/original.png"
+                },
+                {
+                    "name": "Protein Latte Lassi",
+                    "description": "milk, greek yogurt, coffee, sugar, salt\n* Allergen: Contains Dairy",
+                    "image": null
+                },
+                {
+                    "name": "Simply original Diet Lassi",
+                    "description": "milk, greek yogurt, Stevia, salt\n* Allergen: Contains Dairy",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cbed66b3e4ffbd75f9973e609d763a282a5b2966/original.png"
+                },
+                {
+                    "name": "Simply original Lassi",
+                    "description": "milk, greek yogurt, sugar, salt\n* Allergen: Contains Dairy",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f3778a0ec7f71c3cd7580fa5f16e035256cc6df6/original.png"
+                },
+                {
+                    "name": "The Protein Power Lassi",
+                    "description": "milk, greek yogurt, Protein Powder, Stevia, salt\n* Allergen: Contains Dairy",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5e1ac3886b1f75cabd5e3bf47b14f9ab7feda17c/original.png"
+                },
+                {
+                    "name": "Unsweetened Lassi",
+                    "description": "milk, greek yogurt, salt\n* Allergen: Contains Dairy",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4ea99f5458924e9458ee5475dc4394df71119266/original.png"
+                }
+            ]
         },
         {
-          "name": "Protein Latte Lassi",
-          "description": "milk, greek yogurt, coffee, sugar, salt\n* Allergen: Contains Dairy",
-          "image": null
+            "categoryName": "Vegan Protein Lassi Drinks",
+            "items": [
+                {
+                    "name": "The Impossible Mango",
+                    "description": "oatmilk, cashew-coconut yogurt, mango puree from three different region, salt\n* Allergen: Contains nut",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ff76cda5804a6fb3fd1a6087ac47aff9276f3aec/original.png"
+                },
+                {
+                    "name": "The Impossible Maple",
+                    "description": "oatmilk, cashew-coconut yogurt, maple syrup, brown sugar, salt \n* Allergen: Contains nut",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f9167f2bbd005054466c21e74cbf47a01230361e/original.jpeg"
+                },
+                {
+                    "name": "Vegan Unsweetened Lassi",
+                    "description": "oatmilk, cashew-coconut yogurt, salt\n* Allergen: Contains nut",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/b61361baef649bc863ac9e3b02b7203d2cdd2ddc/original.png"
+                }
+            ]
         },
         {
-          "name": "Simply original Diet Lassi",
-          "description": "milk, greek yogurt, Stevia, salt\n* Allergen: Contains Dairy",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/cbed66b3e4ffbd75f9973e609d763a282a5b2966/original.png"
+            "categoryName": "Special Protein Lassi Drinks",
+            "items": [
+                {
+                    "name": "Kulfi Lassi",
+                    "description": "milk, greek yogurt, sugar, pistachio, saffron, cardamon , salt \n* Allergen: Contains Dairy and nut",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2af9c9019be8731ef7fe6ffed1befd4395e37068/original.png"
+                },
+                {
+                    "name": "Maple Wonderland Lassi",
+                    "description": "milk, greek yogurt, maple syrup, brown sugar, salt\n* Allergen: Contains Dairy",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3860e772dbd65504f4299a75485511c72982c2c5/original.jpeg"
+                },
+                {
+                    "name": "Rose Delight Lassi",
+                    "description": "Milk, greek yogurt, rose syrup, pistachio, salt\n* Allergen: Contains Dairy and nut",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f7e8936818c0cda767de8dfb68f8a59cc7bb58aa/original.png"
+                }
+            ]
         },
         {
-          "name": "Simply original Lassi",
-          "description": "milk, greek yogurt, sugar, salt\n* Allergen: Contains Dairy",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f3778a0ec7f71c3cd7580fa5f16e035256cc6df6/original.png"
+            "categoryName": "Hot Tea",
+            "items": [
+                {
+                    "name": "Coco Cream Chai (vegan)",
+                    "description": "Imported Black tea from Sylhet, Bangladesh infused with a signature blend of 7 aromatic spices, condensed coconut milk \n*Allergen: Contains nut",
+                    "image": null
+                },
+                {
+                    "name": "Creamy Spice Chai",
+                    "description": "Imported Black tea from Sylhet, Bangladesh infused with a signature blend of 7 aromatic spices, condensed milk\n* Allergen: Contains Dairy",
+                    "image": null
+                }
+            ]
         },
         {
-          "name": "The Protein Power Lassi",
-          "description": "milk, greek yogurt, Protein Powder, Stevia, salt\n* Allergen: Contains Dairy",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/5e1ac3886b1f75cabd5e3bf47b14f9ab7feda17c/original.png"
+            "categoryName": "Rice Bowls",
+            "items": [
+                {
+                    "name": "Fried Mughlai Chicken Over Rice",
+                    "description": "Fried halal chicken made with our signature proprietary royal blend, served with special ginger basmati curry sauce rice, sumac onion slaw, lettuce, and house-made special garlic white sauce.\n* Allergen: Contains Dairy. Contains Gluten",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2104d4ee123e0741108f2cda29063f63a6829fb9/original.png"
+                },
+                {
+                    "name": "Mughlai Royal Chicken Over Rice",
+                    "description": "",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2c4cf5684a86d8e09bef39f204479f5cbc469e3c/original.png"
+                },
+                {
+                    "name": "Street-Cart Chicken Biryani (Tawa Style)",
+                    "description": "Our Chef’s “back in collage dorm” recipe Halal chicken biryani flavoured with our own signature royal curry blend and basmati rice, topped with caramelized onion, lettuce, and house-made special garlic white sauce.\n* Allergen: Contains Dairy.",
+                    "image": null
+                }
+            ]
         },
         {
-          "name": "Unsweetened Lassi",
-          "description": "milk, greek yogurt, salt\n* Allergen: Contains Dairy",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/4ea99f5458924e9458ee5475dc4394df71119266/original.png"
+            "categoryName": "Hot Bites",
+            "items": [
+                {
+                    "name": "Mughlai Royal Chicken Flaky Roll (2 Rolls)",
+                    "description": "Halal chicken curry made with our signature proprietary royal blend, wrapped in flaky paratha roll and topped with our house-made special garlic white sauce\n* Allergen: Contains Dairy. Contains Gluten",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a03a0f9039e417c168faf5ac180b54d85250fc00/original.png"
+                },
+                {
+                    "name": "Mughlai Royal popcorn chicken",
+                    "description": "Halal chicken made with our signature proprietary royal blend topped with parsley and house-made special garlic white sauce\n* Allergen: Contains Dairy. Contains Gluten",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/967e78a9085e60e6d1cc2832ab6cce99231132e9/original.png"
+                }
+            ]
+        },
+        {
+            "categoryName": "GRAND OPENING OFFER",
+            "items": [
+                {
+                    "name": "[FREE LASSI] Fried Mughlai Chicken Over Rice + Any Lassi",
+                    "description": "",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/786253a4ecfa4864c225ddd91af95b22df8be733/original.jpeg"
+                },
+                {
+                    "name": "[FREE LASSI] Mughlai Royal Chicken Over Rice + Any Lassi",
+                    "description": "",
+                    "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/3c0db3dbb55ce75345a94286fde54a83c286230b/original.jpeg"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "categoryName": "Vegan Protein Lassi Drinks",
-      "items": [
-        {
-          "name": "The Impossible Mango",
-          "description": "oatmilk, cashew-coconut yogurt, mango puree from three different region, salt\n* Allergen: Contains nut",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/ff76cda5804a6fb3fd1a6087ac47aff9276f3aec/original.png"
-        },
-        {
-          "name": "The Impossible Maple",
-          "description": "oatmilk, cashew-coconut yogurt, maple syrup, brown sugar, salt \n* Allergen: Contains nut",
-          "image": null
-        },
-        {
-          "name": "Vegan Unsweetened Lassi",
-          "description": "oatmilk, cashew-coconut yogurt, salt\n* Allergen: Contains nut",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/b61361baef649bc863ac9e3b02b7203d2cdd2ddc/original.png"
-        }
-      ]
-    },
-    {
-      "categoryName": "Special Protein Lassi Drinks",
-      "items": [
-        {
-          "name": "Kulfi Lassi",
-          "description": "milk, greek yogurt, sugar, pistachio, saffron, cardamon , salt \n* Allergen: Contains Dairy and nut",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2af9c9019be8731ef7fe6ffed1befd4395e37068/original.png"
-        },
-        {
-          "name": "Maple Wonderland Lassi",
-          "description": "milk, greek yogurt, maple syrup, brown sugar, salt\n* Allergen: Contains Dairy",
-          "image": null
-        },
-        {
-          "name": "Rose Delight Lassi",
-          "description": "Milk, greek yogurt, rose syrup, pistachio, salt\n* Allergen: Contains Dairy and nut",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/f7e8936818c0cda767de8dfb68f8a59cc7bb58aa/original.png"
-        }
-      ]
-    },
-    {
-      "categoryName": "Seasonal Protein Lassi Drinks",
-      "items": [
-        {
-          "name": "Strawberry Field Lassi",
-          "description": "milk, greek yogurt, strawberry puree, Sugar, basil, salt\n* Allergen: Contains Dairy",
-          "image": null
-        },
-        {
-          "name": "Wild Blueberry Pie Lassi",
-          "description": "milk, greek yogurt, blueberry, Maple, Vanilla, Cardamon, salt\n* Allergen: Contains Dairy",
-          "image": null
-        }
-      ]
-    },
-    {
-      "categoryName": "Hot Tea",
-      "items": [
-        {
-          "name": "Coco Cream Chai (vegan)",
-          "description": "Imported Black tea from Sylhet, Bangladesh infused with a signature blend of 7 aromatic spices, condensed coconut milk \n*Allergen: Contains nut",
-          "image": null
-        },
-        {
-          "name": "Creamy Spice Chai",
-          "description": "Imported Black tea from Sylhet, Bangladesh infused with a signature blend of 7 aromatic spices, condensed milk\n* Allergen: Contains Dairy",
-          "image": null
-        },
-        {
-          "name": "Spiced Honey Lemon Ginger black Tea",
-          "description": "Imported Black tea from Sylhet, Bangladesh infused with a signature blend of 7 aromatic spices, honey, lemon",
-          "image": null
-        }
-      ]
-    },
-    {
-      "categoryName": "Rice Bowls",
-      "items": [
-        {
-          "name": "Fried Mughlai Chicken Over Rice",
-          "description": "Fried halal chicken made with our signature proprietary royal blend, served with special ginger basmati curry sauce rice, sumac onion slaw, lettuce, and house-made special garlic white sauce.\n* Allergen: Contains Dairy. Contains Gluten",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2104d4ee123e0741108f2cda29063f63a6829fb9/original.png"
-        },
-        {
-          "name": "Mughlai Royal Chicken Over Rice",
-          "description": "",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/2c4cf5684a86d8e09bef39f204479f5cbc469e3c/original.png"
-        },
-        {
-          "name": "Street-Cart Chicken Biryani (Tawa Style)",
-          "description": "Our Chef’s “back in collage dorm” recipe Halal chicken biryani flavoured with our own signature royal curry blend and basmati rice, topped with caramelized onion, lettuce, and house-made special garlic white sauce.\n* Allergen: Contains Dairy.",
-          "image": null
-        }
-      ]
-    },
-    {
-      "categoryName": "Hot Bites",
-      "items": [
-        {
-          "name": "Mughlai Royal Chicken Flaky Roll (2 Rolls)",
-          "description": "Halal chicken curry made with our signature proprietary royal blend, wrapped in flaky paratha roll and topped with our house-made special garlic white sauce\n* Allergen: Contains Dairy. Contains Gluten",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/a03a0f9039e417c168faf5ac180b54d85250fc00/original.png"
-        },
-        {
-          "name": "Mughlai Royal popcorn chicken",
-          "description": "Halal chicken made with our signature proprietary royal blend topped with parsley and house-made special garlic white sauce\n* Allergen: Contains Dairy. Contains Gluten",
-          "image": "https://items-images-production.s3.us-west-2.amazonaws.com/files/967e78a9085e60e6d1cc2832ab6cce99231132e9/original.png"
-        }
-      ]
-    }
-  ]
+    ]
 }

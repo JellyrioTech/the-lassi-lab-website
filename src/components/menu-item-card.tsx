@@ -15,20 +15,20 @@ function MenuItemCard({
 }: MenuItemCardProps) {
     return (
         <div
-            className={`flex flex-col items-center w-full min-w-0 rounded-2xl ${className}`.trim()}
+            className={`flex flex-col items-center w-full min-w-0 max-w-full overflow-hidden ${className}`.trim()}
         >
-            <div className="shrink-0 p-[20px] overflow-hidden bg-brand-tertiary/30">
+            <div className="shrink-0 w-[250px] h-[250px] overflow-hidden rounded-xl bg-white flex items-center justify-center">
                 <img
                     src={picture}
                     alt={pictureAlt ?? name}
-                    className="w-full"
+                    className="w-full h-full object-contain"
                 />
             </div>
-            <div className="flex flex-col min-w-0 mt-[20px]">
-                <h3 className="font-text font-bold text-brand-primary-dark text-[16px] sm:text-[18px] leading-tight">
+            <div className="flex flex-col min-w-0 w-full mt-[20px]">
+                <h3 className="font-subheading font-bold text-brand-primary text-md sm:text-xl text-center">
                     {name}
                 </h3>
-                <p className="font-text text-brand-black text-[14px] leading-relaxed mt-[5px]">
+                <p className="font-text text-brand-black text-[14px] text-center mt-[5px] break-words">
                     {description}
                 </p>
             </div>
