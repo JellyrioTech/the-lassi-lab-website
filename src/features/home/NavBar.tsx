@@ -19,7 +19,7 @@ export const NavBar = () => {
     };
 
     return (
-        <div className="mb-10 flex justify-between items-center md:mb-0">
+        <div className="flex justify-between items-center">
             <img
                 src={logo}
                 className="w-[90px] h-[90px] pt-0 md:w-[119px] md:h-[119px] drop-shadow-img"

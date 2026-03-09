@@ -50,7 +50,7 @@ const HomePage = () => {
                             Creamy Lassi & Sizzling Eats
                         </motion.h1>
                         <motion.p
-                            className="font-subheading text-brand-black text-lg md:text-xl mt-[15px]"
+                            className="font-subheading text-brand-black text-lg md:text-xl mt-5"
                             initial={{ opacity: 0, x: -100 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{
@@ -59,7 +59,9 @@ const HomePage = () => {
                                 type: "spring",
                             }}
                         >
-                            Authentic South Asian street food reimagined with global flavors - from high-protein lassis, delicious chicken bites, and bowls built to satisfy.
+                            Authentic South Asian street food reimagined with
+                            global flavors - from high-protein lassis, delicious
+                            chicken bites, and bowls built to satisfy.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 100 }}
@@ -74,13 +76,15 @@ const HomePage = () => {
                                 className="w-fit mt-[25px]"
                                 text={"See Upcoming Events"}
                                 type={"tertiary"}
-                                onTap={() => {}}
+                                onTap={() => {
+                                    navigate("/coming-soon");
+                                }}
                             />
                         </motion.div>
                     </div>
                     <motion.img
                         src={HeaderHeroImage}
-                        className="w-[80%] mt-[30px] sm:w-[400px] md:w-[250px] lg:w-[400px]"
+                        className="w-[80%] mt-[30px] sm:w-[400px] md:w-[250px] lg:w-[400px] lg:ml-[100px]"
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ y: [0, -20, 0], x: 0, opacity: 1 }}
                         transition={{
@@ -141,20 +145,30 @@ const HomePage = () => {
                     Order Online Available Now
                 </h2>
                 <div className="flex justify-center pt-[45px] gap-[20px] flex-wrap">
-                    <img
-                        src={
-                            "https://wp.logos-download.com/wp-content/uploads/2023/02/Uber_Eats_Logo.png?dl"
-                        }
-                        alt="Order Online"
-                        className="w-[150px] h-[150px]"
-                    />
-                    <img
-                        src={
-                            "https://typetype.org/wp-content/uploads/Doordash_1.png"
-                        }
-                        alt="Order Online"
-                        className="w-[150px] h-[150px]"
-                    />
+                    <a
+                        href="https://www.ubereats.com/store/the-lassi-lab/k6q4TFFYQICSTHOYfjKHuA"
+                        target="_blank"
+                    >
+                        <img
+                            src={
+                                "https://wp.logos-download.com/wp-content/uploads/2023/02/Uber_Eats_Logo.png?dl"
+                            }
+                            alt="Order Online"
+                            className="w-[150px] h-[150px]"
+                        />
+                    </a>
+                    <a
+                        href="https://www.doordash.com/store/the-lassi-lab-woburn-38345371/95015346/"
+                        target="_blank"
+                    >
+                        <img
+                            src={
+                                "https://typetype.org/wp-content/uploads/Doordash_1.png"
+                            }
+                            alt="Order Online"
+                            className="w-[150px] h-[150px]"
+                        />
+                    </a>
                 </div>
             </SectionContainer>
             {nextEvent && (
@@ -293,18 +307,14 @@ const HomePage = () => {
                 <div className="flex flex-col mt-15 gap-[45px] md:gap-[15px]">
                     <TopSellersCard
                         title="Mango Cloud Lassi"
-                        body="Double Mango Lassi Made with a secret blend of two mango
-                    varieties, fresh milk, and rich yogurt. It’s thick, creamy,
-                    and sold out at almost every pop-up. Taste the hype."
+                        body="milk, greek yogurt, mango puree from three different region, salt"
                         image={MangoLassi}
                         availableIn={["vegan", "dairy"]}
                     />
                     <TopSellersCard
                         direction="right"
                         title="Maple Wonderland Lassi"
-                        body="Double Mango Lassi Made with a secret blend of two mango
-                    varieties, fresh milk, and rich yogurt. It’s thick, creamy,
-                    and sold out at almost every pop-up. Taste the hype."
+                        body="milk, greek yogurt, maple syrup, brown sugar, salt"
                         image={MapleLassi}
                         availableIn={["vegan", "dairy"]}
                     />
@@ -312,13 +322,17 @@ const HomePage = () => {
                 <div className="flex justify-center">
                     <Button
                         type="primary"
-                        text="Checkout out all our other drinks"
-                        onTap={() => {}}
+                        text="Checkout out all our other menu items"
+                        onTap={() => {
+                            navigate("/menu");
+                        }}
                         className="mt-[50px]"
                     />
                 </div>
             </SectionContainer>
-            <section className={`w-full bg-brand-primary-dark md:overflow-hidden`}>
+            <section
+                className={`w-full bg-brand-primary-dark md:overflow-hidden`}
+            >
                 <div className="flex container px-3 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex">
                         <div className="flex flex-col py-20 md:py-[140px] md:w-[550px] md:mr-[300px] md:shrink-0 md:z-10 md:relative">
@@ -337,7 +351,9 @@ const HomePage = () => {
                                 className="w-fit mt-5"
                                 type="secondary"
                                 text="Learn more about lassi"
-                                onTap={() => {}}
+                                onTap={() => {
+                                    navigate("/coming-soon");
+                                }}
                             />
                         </div>
                         <motion.div
@@ -397,7 +413,9 @@ const HomePage = () => {
                                 className="w-fit mt-[22px]"
                                 type="tertiary"
                                 text="Explore our Menu"
-                                onTap={() => {}}
+                                onTap={() => {
+                                    navigate("/menu");
+                                }}
                             />
                         </div>
                     </div>
@@ -447,7 +465,9 @@ const HomePage = () => {
                         className="w-fit mx-auto mt-[45px]"
                         type="secondary"
                         text="See all our event calendars"
-                        onTap={() => {}}
+                        onTap={() => {
+                            navigate("/coming-soon");
+                        }}
                     />
                 </div>
             </SectionContainer>
@@ -456,10 +476,14 @@ const HomePage = () => {
                     <div className="flex flex-col py-[45px] md:py-0 md:flex-row justify-between items-center gap-[45px]">
                         <div className="flex flex-col">
                             <h2 className="font-heading text-3xl lg:text-4xl text-brand-black">
-                            Global Fusion Catering
+                                Global Fusion Catering
                             </h2>
                             <p className="font-subheading text-brand-black text-[16px] py-[20px]">
-                            From office late-nights to home celebrations, we bring the heat. Experience our signature chicken curry bowls, crispy paratha rolls, and refreshing, protein-packed lassi. Chef-prepared, safety-certified, and delivered fresh.
+                                From office late-nights to home celebrations, we
+                                bring the heat. Experience our signature chicken
+                                curry bowls, crispy paratha rolls, and
+                                refreshing, protein-packed lassi. Chef-prepared,
+                                safety-certified, and delivered fresh.
                             </p>
                             <Button
                                 className="w-fit"
