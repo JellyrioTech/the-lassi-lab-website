@@ -1,5 +1,3 @@
-import Button from "../components/button";
-
 function ComingSoon() {
     return (
         <div className="flex flex-col justify-center py-8 px-6 mx-auto max-w-screen-2xl text-left md:text-center lg:py-16">

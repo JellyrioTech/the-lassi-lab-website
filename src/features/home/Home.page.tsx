@@ -13,8 +13,6 @@ import MarketEventCard from "../../components/market-event-card";
 import OwnerImage from "../../assets/Owner Image.png";
 import type { MarketEvent } from "../../types/Event.type";
 import { getUpcomingEvents } from "../../services/upcomingEvents.service";
-import MenuItemCard from "../../components/menu-item-card";
-
 const HomePage = () => {
     const navigate = useNavigate();
     const eventsScrollRef = useRef<HTMLDivElement>(null);

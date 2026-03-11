@@ -5,12 +5,6 @@ import SectionContainer from "../../components/section-container";
 import type { MenuData } from "../../types/Menu.type";
 import { getMenu } from "../../services/menu.service";
 
-const PLACEHOLDER_IMAGE =
-    "data:image/svg+xml," +
-    encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="%23e5e5e5" width="200" height="200"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23999" font-size="12" font-family="sans-serif">No image</text></svg>',
-    );
-
 const MenuPage = () => {
     const [menu, setMenu] = useState<MenuData | null>(null);
 
