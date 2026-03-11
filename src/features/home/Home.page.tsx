@@ -10,7 +10,7 @@ import FreshLassiBG from "../../assets/products/FreshLasiImage.png";
 import popcornchickenposter from "../../assets/products/popcornChickenPoster.jpg";
 import { PageLayout } from "../../components/PageLayout";
 import MarketEventCard from "../../components/market-event-card";
-import OwnerImage from "../../assets/Owner Image.png";
+import OwnerImage from "../../assets/owner image.png";
 import type { MarketEvent } from "../../types/Event.type";
 import { getUpcomingEvents } from "../../services/upcomingEvents.service";
 const HomePage = () => {
