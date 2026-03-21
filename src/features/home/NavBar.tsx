@@ -7,6 +7,7 @@ export const navLinks = [
     { linkText: "About Us", path: "/coming-soon" },
     { linkText: "Event Calendar", path: "/coming-soon" },
     { linkText: "Menu", path: "/menu" },
+    { linkText: "Catering", path: "/catering" },
     { linkText: "Contact Us", path: "/coming-soon" },
 ];
 
