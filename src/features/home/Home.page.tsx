@@ -487,7 +487,7 @@ const HomePage = () => {
                                 className="w-fit"
                                 type="secondary"
                                 text="View Catering Menu"
-                                onTap={() => navigate("/coming-soon")}
+                                onTap={() => navigate("/catering")}
                             />
                         </div>
                         <motion.img

@@ -25,7 +25,7 @@ const MenuPage = () => {
     return (
         <PageLayout>
             <SectionContainer sectionClassName="min-h-dvh">
-                <h1 className="font-heading text-[32px] md:text-[50px] text-brand-black text-right">
+                <h1 className="font-heading text-[32px] md:text-[50px] text-brand-black text-left md:text-right">
                     Our Menu
                 </h1>
                 <div className="flex flex-col gap-10 mt-8">
