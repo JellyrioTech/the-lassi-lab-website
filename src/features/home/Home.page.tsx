@@ -58,8 +58,7 @@ const HomePage = () => {
                             }}
                         >
                             Authentic South Asian street food reimagined with
-                            global flavors - from high-protein lassis, delicious
-                            chicken bites, and bowls built to satisfy.
+                            global flavors - from high-protein lassis to healthy fusion bites built to satisfy.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 100 }}
@@ -139,115 +138,60 @@ const HomePage = () => {
                 </motion.div>
             </div>
             <SectionContainer>
-                <h2 className="font-heading text-3xl lg:text-4xl text-brand-primary text-center">
-                    Order Online Available Now
-                </h2>
-                <div className="flex justify-center pt-[45px] gap-[20px] flex-wrap">
-                    <a
-                        href="https://www.ubereats.com/store/the-lassi-lab/k6q4TFFYQICSTHOYfjKHuA"
-                        target="_blank"
-                    >
-                        <img
-                            src={
-                                "https://wp.logos-download.com/wp-content/uploads/2023/02/Uber_Eats_Logo.png?dl"
-                            }
-                            alt="Order Online"
-                            className="w-[150px] h-[150px]"
+                <div className="flex flex-col">
+                    <h2 className="font-heading text-[32px] md:text-[50px] text-brand-black text-center">
+                        We are Always Moving
+                    </h2>
+                    <h3 className="font-text font-bold text-brand-primary text-[20px] md:text-[32px] text-center">
+                        Find us in these next events
+                    </h3>
+                    <div className="relative mt-[45px]">
+                        <div
+                            ref={eventsScrollRef}
+                            className="flex flex-nowrap gap-6 overflow-x-auto overflow-y-hidden pb-2 px-8 scroll-smooth"
+                        >
+                            {upcomingEvents.map((event) => (
+                                <MarketEventCard
+                                    key={event.id}
+                                    imageLink={event.imageLink}
+                                    name={event.name}
+                                    address={event.address}
+                                    date={event.date}
+                                    time={event.time}
+                                    className="shrink-0"
+                                />
+                            ))}
+                        </div>
+                        {/* Gradient edges to suggest scroll */}
+                        <div
+                            className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-brand-white to-transparent"
+                            aria-hidden
                         />
-                    </a>
-                    <a
-                        href="https://www.doordash.com/store/the-lassi-lab-woburn-38345371/95015346/"
-                        target="_blank"
-                    >
-                        <img
-                            src={
-                                "https://typetype.org/wp-content/uploads/Doordash_1.png"
-                            }
-                            alt="Order Online"
-                            className="w-[150px] h-[150px]"
+                        <div
+                            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-brand-white to-transparent"
+                            aria-hidden
                         />
-                    </a>
+                        <p className="flex items-center justify-center gap-2 mt-3 text-brand-grey text-sm font-text">
+                            <span aria-hidden>←</span>
+                            <span>Swipe or scroll to see more</span>
+                            <span aria-hidden>→</span>
+                        </p>
+                    </div>
+                    <Button
+                        className="w-fit mx-auto mt-[45px]"
+                        type="secondary"
+                        text="See all our event calendars"
+                        onTap={() => {
+                            navigate("/coming-soon");
+                        }}
+                    />
                 </div>
             </SectionContainer>
             {nextEvent && (
                 <SectionContainer
                     bg={"bg-brand-black"}
-                    sectionClassName="relative overflow-hidden"
+                    sectionClassName="relative overflow-hidden paper-texture-bg"
                 >
-                    {/* Flowing waves – two layers, opposite directions, different speeds */}
-                    <motion.div
-                        className="absolute inset-0 w-[120%] pointer-events-none"
-                        initial={false}
-                        animate={{ x: ["-20%", "0%"] }}
-                        transition={{
-                            duration: 15,
-                            repeat: Infinity,
-                            ease: "linear",
-                            repeatType: "reverse",
-                        }}
-                    >
-                        <svg
-                            className="w-full h-full text-brand-white/10"
-                            viewBox="0 0 600 120"
-                            preserveAspectRatio="none"
-                            aria-hidden
-                        >
-                            <path
-                                d="M0 60 C80 40 120 80 200 60 S320 40 400 60 S520 80 600 60"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                            <path
-                                d="M0 80 C100 55 180 95 280 75 S380 50 480 75 S580 100 700 75"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1"
-                                strokeLinecap="round"
-                            />
-                            <path
-                                d="M0 40 C70 65 150 25 250 45 S350 70 450 45 S550 20 650 45"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </motion.div>
-                    <motion.div
-                        className="absolute inset-0 w-[120%] pointer-events-none"
-                        initial={false}
-                        animate={{ x: ["0%", "-20%"] }}
-                        transition={{
-                            duration: 5,
-                            repeat: Infinity,
-                            ease: "linear",
-                            repeatType: "reverse",
-                        }}
-                    >
-                        <svg
-                            className="w-full h-full text-brand-white/5"
-                            viewBox="0 0 600 120"
-                            preserveAspectRatio="none"
-                            aria-hidden
-                        >
-                            <path
-                                d="M0 50 C90 70 170 30 270 50 S390 75 490 50 S610 25 710 50"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1"
-                                strokeLinecap="round"
-                            />
-                            <path
-                                d="M0 95 C120 70 200 100 300 85 S420 60 520 85"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.2"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </motion.div>
                     <div className="relative z-10 flex sm:flex-row justify-between items-center flex-wrap gap-[20px]">
                         <div className="flex flex-col">
                             <h2 className="font-heading text-4xl lg:text-5xl text-brand-white text-left">
@@ -267,12 +211,6 @@ const HomePage = () => {
                                 <b>Time: </b>
                                 {nextEvent.time}
                             </p>
-                            <Button
-                                type="primary"
-                                text="Pre order now"
-                                onTap={() => {}}
-                                className="w-fit mt-[20px]"
-                            />
                         </div>
                         <div className="flex flex-col">
                             <motion.img
@@ -334,13 +272,13 @@ const HomePage = () => {
                 <div className="flex container px-3 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex">
                         <div className="flex flex-col py-20 md:py-[140px] md:w-[550px] md:mr-[300px] md:shrink-0 md:z-10 md:relative">
-                            <h2 className="font-heading font-bold text-4xl text-brand-black md:text-5xl">
+                            <h2 className="font-heading font-bold text-4xl text-brand-white md:text-5xl">
                                 Too Fresh to Last
                             </h2>
-                            <p className="font-text font-bold text-brand-white text-[24px] mt-2">
+                            <p className="font-text font-bold text-brand-secondary text-[24px] mt-2">
                                 We Take Pride on That
                             </p>
-                            <p className="font-text text-brand-white text-[16px] my-[18px]">
+                            <p className="font-text text-brand-white text-[16px] pt-[30px]">
                                 Our flavor comes from simple, whole ingredients.
                                 We trade a long shelf life for an authentic,
                                 preservative-free taste.
@@ -419,74 +357,23 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <SectionContainer>
-                <div className="flex flex-col">
-                    <h2 className="font-heading text-[32px] md:text-[50px] text-brand-black text-center">
-                        We are Always Moving
-                    </h2>
-                    <h3 className="font-text font-bold text-brand-primary text-[20px] md:text-[32px] text-center">
-                        Find us in these next events
-                    </h3>
-                    <div className="relative mt-[45px]">
-                        <div
-                            ref={eventsScrollRef}
-                            className="flex flex-nowrap gap-6 overflow-x-auto overflow-y-hidden pb-2 px-8 scroll-smooth"
-                        >
-                            {upcomingEvents.map((event) => (
-                                <MarketEventCard
-                                    key={event.id}
-                                    imageLink={event.imageLink}
-                                    name={event.name}
-                                    address={event.address}
-                                    date={event.date}
-                                    time={event.time}
-                                    className="shrink-0"
-                                />
-                            ))}
-                        </div>
-                        {/* Gradient edges to suggest scroll */}
-                        <div
-                            className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-brand-white to-transparent"
-                            aria-hidden
-                        />
-                        <div
-                            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-brand-white to-transparent"
-                            aria-hidden
-                        />
-                        <p className="flex items-center justify-center gap-2 mt-3 text-brand-grey text-sm font-text">
-                            <span aria-hidden>←</span>
-                            <span>Swipe or scroll to see more</span>
-                            <span aria-hidden>→</span>
-                        </p>
-                    </div>
-                    <Button
-                        className="w-fit mx-auto mt-[45px]"
-                        type="secondary"
-                        text="See all our event calendars"
-                        onTap={() => {
-                            navigate("/coming-soon");
-                        }}
-                    />
-                </div>
-            </SectionContainer>
             <section className="w-full bg-brand-primary">
                 <div className="flex container mx-auto px-4 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex flex-col py-[45px] md:py-0 md:flex-row justify-between items-center gap-[45px]">
                         <div className="flex flex-col">
                             <h2 className="font-heading text-3xl lg:text-4xl text-brand-black">
-                                Global Fusion Catering
+                            High-protein lassi, rooted in tradition
                             </h2>
                             <p className="font-subheading text-brand-black text-[16px] py-[20px]">
-                                From office late-nights to home celebrations, we
-                                bring the heat. Experience our signature chicken
-                                curry bowls, crispy paratha rolls, and
-                                refreshing, protein-packed lassi. Chef-prepared,
-                                safety-certified, and delivered fresh.
+                            At The Lassi Lab, we’ve updated South Asia’s favorite yogurt drink for the modern lifestyle. We offer both classic dairy and plant-based versions, each carefully crafted to deliver a complete protein and probiotic profile. 
+                            </p>
+                            <p className="font-subheading text-brand-black text-[16px] py-[20px]">
+                            Whether you choose our Greek yogurt base or our signature oat and cashew-coconut blend, you get the same creamy texture and functional benefits. From our signature Mango Cloud to Coffee and Rose, we’re bringing new flavors to a timeless classic.
                             </p>
                             <Button
                                 className="w-fit"
                                 type="secondary"
-                                text="View Catering Menu"
+                                text="Preorder Now"
                                 onTap={() => navigate("/catering")}
                             />
                         </div>
@@ -504,6 +391,40 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+            <SectionContainer>
+                <h2 className="font-heading text-3xl lg:text-4xl text-brand-primary text-center">
+                    Order Dinner Now
+                </h2>
+                <h3 className="font-text text-brand-black text-md md:text-lg mt-[22px] text-center">
+                       We are open for delivery and pickup Mon, Tues, Wed, Fri from 4:00pm to 9:30pm
+                    </h3>
+                <div className="flex justify-center pt-[32px] gap-[0px] flex-wrap">
+                    <a
+                        href="https://www.ubereats.com/store/the-lassi-lab/k6q4TFFYQICSTHOYfjKHuA"
+                        target="_blank"
+                    >
+                        <img
+                            src={
+                                "https://wp.logos-download.com/wp-content/uploads/2023/02/Uber_Eats_Logo.png?dl"
+                            }
+                            alt="Order Online"
+                            className="w-[100px] h-[100px]"
+                        />
+                    </a>
+                    <a
+                        href="https://www.doordash.com/store/the-lassi-lab-woburn-38345371/95015346/"
+                        target="_blank"
+                    >
+                        <img
+                            src={
+                                "https://typetype.org/wp-content/uploads/Doordash_1.png"
+                            }
+                            alt="Order Online"
+                            className="w-[100px] h-[100px]"
+                        />
+                    </a>
+                </div>
+            </SectionContainer>
         </PageLayout>
     );
 };

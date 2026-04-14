@@ -38,13 +38,6 @@ export const getAllEvents = async (): Promise<CalendarEvent[]> => {
             endTime: "4PM",
         },
         {
-            name: "Hingham Winter Farmers Market",
-            address: "204 Union Street, Hingham MA",
-            date: new Date("01/10/2026"),
-            startTime: "10AM",
-            endTime: "1PM",
-        },
-        {
             name: "Farmers Market",
             address: "First Street Market, Cambridge, MA",
             date: new Date("01/17/2026"),
@@ -64,6 +57,34 @@ export const getAllEvents = async (): Promise<CalendarEvent[]> => {
             date: new Date("01/31/2026"),
             startTime: "11AM",
             endTime: "4PM",
+        },
+        {
+            name: "Dedham Farmers Market",
+            address: "670 High St, Dedham, MA",
+            date: new Date("04/18/2026"),
+            startTime: "10AM",
+            endTime: "1PM",
+        },
+        {
+            name: "Dedham Farmers Market",
+            address: "670 High St, Dedham, MA",
+            date: new Date("05/16/2026"),
+            startTime: "10AM",
+            endTime: "1PM",
+        },
+        {
+            name: "Dedham Farmers Market",
+            address: "670 High St, Dedham, MA",
+            date: new Date("06/06/2026"),
+            startTime: "10AM",
+            endTime: "1PM",
+        },
+        {
+            name: "Halfway to Halloween Festival",
+            address: "Old Town Hall, Salem, MA",
+            date: new Date("04/19/2026"),
+            startTime: "12pm",
+            endTime: "7pm",
         },
     ];
 

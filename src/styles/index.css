@@ -51,3 +51,22 @@ body {
 .scrollbar-always::-webkit-scrollbar-track {
     margin-top: 15px;
 }
+
+/* Black field with white polka dots */
+.paper-texture-bg {
+    background-color: var(--color-brand-black);
+    background-image: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.8) 1.25px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.8) 1.25px,
+            transparent 1.5px
+        );
+    background-size: 18px 18px;
+    background-position: 0 0, 9px 9px;
+}
+
+
