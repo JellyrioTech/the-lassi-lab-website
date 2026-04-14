@@ -1,10 +1,11 @@
 import { useState } from "react";
-import logo from "../../assets/logo.svg";
+import { useLocation, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import { AnimatePresence, motion } from "motion/react";
 
 export const navLinks = [
     { linkText: "Home", path: "/" },
-    { linkText: "About Us", path: "/coming-soon" },
+    { linkText: "About Us", path: "/#about-us" },
     { linkText: "Event Calendar", path: "/coming-soon" },
     { linkText: "Menu", path: "/menu" },
     { linkText: "Catering", path: "/catering" },
@@ -13,10 +14,41 @@ export const navLinks = [
 
 export const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMobileMenu = () => {
         console.log("toggle clicked");
         setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const handleNavClick = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        path: string,
+    ) => {
+        if (!path.startsWith("/#")) return;
+        event.preventDefault();
+        setIsMobileMenuOpen(false);
+
+        const targetId = path.replace("/#", "");
+        const scrollToSection = () => {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+            window.history.replaceState(null, "", `/#${targetId}`);
+        };
+
+        if (location.pathname === "/") {
+            scrollToSection();
+            return;
+        }
+
+        navigate("/");
+        setTimeout(scrollToSection, 80);
     };
 
     return (
@@ -91,7 +123,12 @@ export const NavBar = () => {
                                     key={link.linkText
                                         .replace(" ", "_")
                                         .toLowerCase()}
-                                    onClick={() => toggleMobileMenu()}
+                                    onClick={(event) => {
+                                        handleNavClick(event, link.path);
+                                        if (!link.path.startsWith("/#")) {
+                                            toggleMobileMenu();
+                                        }
+                                    }}
                                     className="text-brand-white hover:underline decoration-brand-black decoration-1 underline-offset-1 w-fit mx-auto"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -117,6 +154,9 @@ export const NavBar = () => {
                         <a
                             href={link.path}
                             key={link.linkText.replace(" ", "_").toLowerCase()}
+                            onClick={(event) =>
+                                handleNavClick(event, link.path)
+                            }
                             className="text-brand-white hover:underline decoration-brand-black decoration-1 underline-offset-1"
                         >
                             {link.linkText}

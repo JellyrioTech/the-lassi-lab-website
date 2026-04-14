@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../../components/button";
 import HeaderHeroImage from "../../assets/Header_Hero_Image.png";
 import { easeInOut, motion } from "motion/react";
@@ -7,7 +7,7 @@ import SectionContainer from "../../components/section-container";
 import MapleLassi from "../../assets/products/Maple Lassi.png";
 import MangoLassi from "../../assets/products/MangoLassi.png";
 import FreshLassiBG from "../../assets/products/FreshLasiImage.png";
-import popcornchickenposter from "../../assets/products/popcornChickenPoster.jpg";
+import strawberryFieldsLassi from "../../assets/products/strawberry fields lassi.png";
 import { PageLayout } from "../../components/PageLayout";
 import MarketEventCard from "../../components/market-event-card";
 import OwnerImage from "../../assets/owner image.png";
@@ -15,7 +15,9 @@ import type { MarketEvent } from "../../types/Event.type";
 import { getUpcomingEvents } from "../../services/upcomingEvents.service";
 const HomePage = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const eventsScrollRef = useRef<HTMLDivElement>(null);
+    const hasHandledInitialHash = useRef(false);
     const [upcomingEvents, setUpcomingEvents] = useState<MarketEvent[]>([]);
 
     useEffect(() => {
@@ -25,8 +27,30 @@ const HomePage = () => {
     useEffect(() => {
         const el = eventsScrollRef.current;
         if (!el) return;
-        el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+        el.scrollLeft = 0;
     }, [upcomingEvents]);
+
+    useEffect(() => {
+        // Keep initial page load at top; only hash-scroll after user navigation.
+        if (!hasHandledInitialHash.current) {
+            hasHandledInitialHash.current = true;
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+            return;
+        }
+
+        if (!location.hash) return;
+        const target = document.querySelector(location.hash);
+        if (!(target instanceof HTMLElement)) return;
+
+        // Wait for layout/paint, then smoothly bring section into viewport.
+        requestAnimationFrame(() => {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+        });
+    }, [location.hash]);
 
     const nextEvent = upcomingEvents[0];
 
@@ -45,7 +69,7 @@ const HomePage = () => {
                                 type: "spring",
                             }}
                         >
-                            Creamy Lassi & Sizzling Eats
+                            South Asian Protein Drink
                         </motion.h1>
                         <motion.p
                             className="font-subheading text-brand-black text-lg md:text-xl mt-5"
@@ -57,8 +81,7 @@ const HomePage = () => {
                                 type: "spring",
                             }}
                         >
-                            Authentic South Asian street food reimagined with
-                            global flavors - from high-protein lassis to healthy fusion bites built to satisfy.
+                           Small-batch, high-protein refreshment designed for your gut health—where handcrafted tradition meets the unique flavors of today.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 100 }}
@@ -177,14 +200,14 @@ const HomePage = () => {
                             <span aria-hidden>→</span>
                         </p>
                     </div>
-                    <Button
+                    {/* <Button
                         className="w-fit mx-auto mt-[45px]"
                         type="secondary"
                         text="See all our event calendars"
                         onTap={() => {
                             navigate("/coming-soon");
                         }}
-                    />
+                    /> */}
                 </div>
             </SectionContainer>
             {nextEvent && (
@@ -258,7 +281,7 @@ const HomePage = () => {
                 <div className="flex justify-center">
                     <Button
                         type="primary"
-                        text="Checkout out all our other menu items"
+                        text="Checkout all the flavors"
                         onTap={() => {
                             navigate("/menu");
                         }}
@@ -322,7 +345,7 @@ const HomePage = () => {
                 <div className="flex flex-col container mx-auto px-3 py-[50px] md:px-0 md:py-0">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <motion.img
-                            src={popcornchickenposter}
+                            src={strawberryFieldsLassi}
                             className="w-[300px] rounded-[20px] border-brand-black border-10 md:rounded-none md:w-[400px] lg:w-[500px] drop-shadow-img md:border-15 md:-rotate-[5deg]"
                             animate={{ rotateY: [-30, -8, -30] }}
                             transition={{
@@ -332,18 +355,15 @@ const HomePage = () => {
                                 ease: "easeInOut",
                             }}
                         />
-                        <div className="flex flex-col pt-[50px] md:pb-0 md:pt-0 md:items-end mx-2 md:w-[500px]">
-                            <h2 className="font-heading text-left text-xl md:text-right md:text-2xl lg:text-3xl text-brand-primary-dark">
-                                NEW ITEM ALERT!
+                        <div className="flex flex-col pt-[50px] md:pb-0 md:pt-0 md:items-end mx-2 md:w-[500px] gap-1">
+                            <h2 className="font-heading text-left text-md md:text-right md:text-lg lg:text-xl text-brand-primary-dark">
+                                SPRING SPECIAL FLAVOR!
                             </h2>
                             <p className="font-heading  text-brand-black text-2xl text-left md:text-right md:text-3xl lg:text-4xl">
-                                Mughlai Popcorn Chicken
+                                Strawberry Fields Lassi
                             </p>
                             <p className="font-text text-brand-black text-left text-[16px] md:text-right mt-[22px]">
-                                Crafted with our secret blend of spices, we’ve
-                                created the perfect popcorn chicken that pairs
-                                beautifully with our Lassi. It's so flavorful on
-                                its own, you won't even need sauce!
+                            Handcrafted with house-made strawberry puree and aromatic basil syrup. A unique, high-protein blend that’s gut-healthy, dairy-free, and perfectly balanced for a modern, refreshing ritual.
                             </p>
                             <Button
                                 className="w-fit mt-[22px]"
@@ -357,7 +377,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <section className="w-full bg-brand-primary">
+            <section className="w-full bg-brand-primary" id="about-us">
                 <div className="flex container mx-auto px-4 sm:px-0 sm:mx-auto md:relative">
                     <div className="flex flex-col py-[45px] md:py-0 md:flex-row justify-between items-center gap-[45px]">
                         <div className="flex flex-col">
@@ -398,7 +418,7 @@ const HomePage = () => {
                 <h3 className="font-text text-brand-black text-md md:text-lg mt-[22px] text-center">
                        We are open for delivery and pickup Mon, Tues, Wed, Fri from 4:00pm to 9:30pm
                     </h3>
-                <div className="flex justify-center pt-[32px] gap-[0px] flex-wrap">
+                <div className="flex justify-center pt-[32px] gap-[16px] flex-wrap">
                     <a
                         href="https://www.ubereats.com/store/the-lassi-lab/k6q4TFFYQICSTHOYfjKHuA"
                         target="_blank"
