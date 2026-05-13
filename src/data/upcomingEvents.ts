@@ -1,7 +1,5 @@
 import type { MarketEvent } from "../types/Event.type";
 import backGarden from "../assets/organizers/backGarden.webp";
-import fourGoodBVibes from "../assets/organizers/4goodbvibes.avif";
-import beInclusiveHoliFestival from "../assets/organizers/beinclusiveholifestival.webp";
 import beverlyMainStreet from "../assets/organizers/beverlymainstreet.png";
 import bostonLocalFoodFestival from "../assets/organizers/boston local food festival.webp";
 import brightonBazaar from "../assets/organizers/brighton bazaar.jpg";
@@ -15,7 +13,7 @@ import rabbitCoven from "../assets/organizers/rabbitcoven.webp";
 import sofarSounds from "../assets/organizers/sofarSounds.jpg";
 import wickedNewEngland from "../assets/organizers/wickedNewEngland.avif";
 import walpoleHoliFestival from "../assets/organizers/beinclusiveholifestival.webp";
-import lynnMusicFoundation from "../assets/organizers/lynn music foundation.jpg";
+import lynnMusicFoundation from "../assets/organizers/lynnmusicfoundation.jpg";
 import fourGoodbvibes from "../assets/organizers/4goodbvibes.avif";
 
 /** Local calendar day. `new Date("YYYY-MM-DD")` is parsed as UTC and shows one day early in US time zones. */
