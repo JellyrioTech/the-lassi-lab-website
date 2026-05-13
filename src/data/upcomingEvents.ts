@@ -15,6 +15,8 @@ import rabbitCoven from "../assets/organizers/rabbitcoven.webp";
 import sofarSounds from "../assets/organizers/sofarSounds.jpg";
 import wickedNewEngland from "../assets/organizers/wickedNewEngland.avif";
 import walpoleHoliFestival from "../assets/organizers/beinclusiveholifestival.webp";
+import lynnMusicFoundation from "../assets/organizers/lynn music foundation.jpg";
+import fourGoodbvibes from "../assets/organizers/4goodbvibes.avif";
 
 /** Local calendar day. `new Date("YYYY-MM-DD")` is parsed as UTC and shows one day early in US time zones. */
 const localDay = (year: number, month: number, day: number) =>
@@ -78,13 +80,6 @@ const upcomingEventsBase: Omit<MarketEvent, "id">[] = [
         time: "12PM - 7PM",
     },
     {
-        imageLink: sofarSounds,
-        name: "Sofar Sounds Cinco de Mayo Concert",
-        address: "59 First Street, Cambridge, MA 02141",
-        date: localDay(2026, 5, 5),
-        time: "7PM - 10PM",
-    },
-    {
         imageLink: dedhamFarmersMarket,
         name: "Dedham Farmers Market",
         address: "670 High St, Dedham, MA 02026",
@@ -103,7 +98,7 @@ const upcomingEventsBase: Omit<MarketEvent, "id">[] = [
         imageLink: dedhamFarmersMarket,
         name: "Dedham Farmers Market",
         address: "670 High St, Dedham, MA 02026",
-        date: localDay(2026, 6, 6),
+        date: localDay(2026, 5, 30),
         time: "10AM - 1PM",
     },
     {
@@ -128,7 +123,7 @@ const upcomingEventsBase: Omit<MarketEvent, "id">[] = [
         time: "11am - 5PM",
     },
     {
-        imageLink: bostonLocalFoodFestival,
+        imageLink: brightonBazaar,
         name: "Spring Music Festival",
         address: "The Charles River Speedway, Brighton, MA",
         date: localDay(2026, 5, 23),
@@ -159,8 +154,22 @@ const upcomingEventsBase: Omit<MarketEvent, "id">[] = [
         imageLink: marbleheadFarmersMarket,
         name: "Marblehead Farmers Market",
         address: "217 Pleasant Street, Marblehead, MA",
-        date: localDay(2026, 5, 30),
+        date: localDay(2026, 6, 6),
         time: "9am - 12pm",
+    },
+    {
+        imageLink: lynnMusicFoundation,
+        name: "Lynn Music Festival",
+        address: "Red Rock Park, Lynn, MA",
+        date: localDay(2026, 6, 20),
+        time: "1pm - 8pm",
+    },
+    {
+        imageLink: fourGoodbvibes,
+        name: "Open Air Artisan Market",
+        address: "The Condon Shell, Medford, MA",
+        date: localDay(2026, 6, 28),
+        time: "11am - 3pm",
     },
 ];
 
